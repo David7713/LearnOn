@@ -1,0 +1,85 @@
+/* Container styles */
+.css-container {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin-top: 130px;
+  }
+  
+  /* Topics list styles */
+  .topics-list {
+    flex: 0 0 25%; /* Fixed width for the left section */
+    background-color: #f5f5f5;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    overflow-y: auto; /* Scrollable if the content exceeds the height */
+    background-color: black;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .topic-item {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border:none;
+    text-align: left;
+    font-size: 16px;
+    background-color:black;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .topic-item:hover {
+    background-color: #c9a9e2;
+    color: #fff;
+  }
+  
+  .topic-item.active {
+    background-color: #9228e9;
+    color: #fff;
+  }
+  
+  /* Content area styles */
+  .topic-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Scrollable if the content exceeds the height */
+  }
+  .topic-content button {
+    background-color: #9228e9;
+    width: auto; /* Let the width adjust based on content */
+    height: 40px;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    padding: 0 10px; /* Add padding for space around the content */
+    cursor: pointer;
+  }
+  
+  .topic-content button svg {
+    margin-right: 8px; /* Add space between the icon and the text */
+  }
+  .topic-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color:white;
+  }
+  
+  .topic-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: white;
+    margin-top: 10px;
+  }
+  

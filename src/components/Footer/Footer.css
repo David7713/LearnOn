@@ -1,0 +1,129 @@
+.footer-part {
+  background-color: black;
+  color: white;
+  height: 80vh;
+  display: flex; /* Enable flexbox */
+  flex-direction: column;
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Horizontally center the content */
+  text-align: center;
+  gap: 50px;
+}
+
+.footer-headline-part {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-headline-part div {
+  font-size: 26px; /* Slight increase in font size */
+  font-weight: 600; /* Bold for better emphasis */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.footer-headline-part div:hover {
+  color: #9228e9; /* Change color on hover */
+}
+
+.footer-headline-part ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 70px;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px; /* Slight increase in font size */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.footer-headline-part ul li {
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.footer-headline-part ul li:hover {
+  transform: scale(1.1); /* Slight scale effect on hover */
+  color: #9228e9; /* Color change on hover */
+}
+
+#on {
+  color: #9228e9;
+  cursor: pointer;
+}
+
+.footer-subheader-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 130px;
+}
+
+.footer-subheader-part p {
+  font-size: 20px; /* Increased font size for better readability */
+  font-weight: 600; /* Bold for better emphasis */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.footer-subheader-part p:hover {
+  color: #9228e9; /* Change color on hover */
+}
+
+.footer-subheader-part ul {
+  margin-top: 10px;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.footer-subheader-part ul li {
+  margin-top: 0.3px;
+  font-size: 17px; /* Increased font size for better readability */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.footer-subheader-part ul li:hover {
+  color: #9228e9; /* Color change on hover */
+}
+
+.footer-social-media-part {
+  display: flex;
+  flex-direction: row; /* Changed to row */
+  justify-content: space-between; /* Ensures spacing between the two parts */
+  align-items: center; /* Aligns items vertically in the center */
+  gap: 50px;
+}
+
+.footer-social-media-part ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* Increased gap for better spacing */
+  font-size: 32px; /* Increased icon size for better visibility */
+  list-style: none; /* Optional: Removes default bullet points */
+  padding: 0; /* Optional: Removes default padding */
+  margin: 0; /* Optional: Removes default margin */
+  cursor: pointer;
+}
+
+.footer-social-media-part ul li {
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for both size and color */
+}
+
+.footer-social-media-part ul li:hover {
+  transform: scale(1.2); /* Slight scale effect on hover */
+  color: #9228e9; /* Change color on hover */
+}
+
+.footer-social-media-part div {
+  font-size: 16px; /* Slightly larger font for readability */
+  color: #888; /* Lighter text color for better contrast */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.footer-social-media-part div:hover {
+  color: #9228e9; /* Change color on hover */
+}
+
+.footer-part li:hover {
+  color: #9228e9; /* Color change on hover for list items */
+}

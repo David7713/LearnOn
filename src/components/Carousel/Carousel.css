@@ -1,0 +1,49 @@
+.carousel-section {
+    width: 100%;
+    overflow: hidden; /* Ensure the overflowing content is hidden */
+    background-color: black;
+    height: 60px;
+    position: fixed; /* Fixes the position of the carousel */
+    top: 60px; /* Adjusts it to appear below the navbar */
+    left: 0; /* Ensures it starts from the left edge */
+    z-index: 999; /* Keeps it behind the navbar if they overlap */
+}
+
+  .carousel-section ul {
+    display: flex;
+    justify-content: start; /* Start items on the left */
+    align-items: center;
+    gap: 30px; /* Add spacing between items */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    animation: scroll 50s linear infinite; /* Infinite scrolling animation */
+  }
+  
+  .carousel-section ul a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    white-space: nowrap; /* Prevent links from wrapping */
+  }
+  
+
+  .carousel-section ul a:hover{
+    color: #dac2ed;
+
+  }
+  .carousel-section ul li {
+    flex-shrink: 0; /* Prevent shrinking of items */
+
+  }
+  
+  @keyframes scroll {
+    from {
+      transform: translateX(0); /* Start at the initial position */
+    }
+    to {
+      transform: translateX(-100%); /* Move the list completely to the left */
+    }
+  }
+  

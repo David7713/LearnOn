@@ -1,0 +1,300 @@
+.html-content-part {
+    display: flex;
+    flex-direction: row;
+    background-color: #A7C8E9;
+    height: 80vh;
+    align-items: center;
+    justify-content: space-evenly;
+    color: black;
+    margin-top: 30px;
+}
+
+.html-content-text-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.html-content-text-part h1 {
+    font-size: 80px;
+}
+
+.html-content-text-part p {
+    font-size: 20px;
+}
+
+.html-content-text-part button {
+    border-radius: 30px;
+    width: 170px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.html-content-text-part button:nth-child(3) {
+    background-color: #F4A896;
+}
+
+.html-content-text-part button:nth-child(4) {
+    background-color: #C5B3E6;
+}
+
+.html-content-text-part button:nth-child(5) {
+    background-color: #AEE5D8;
+}
+
+/* Soft hover effect */
+.html-content-text-part button:hover {
+    transform: scale(1.05); /* Slightly enlarges the button */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.html-content-image-part img {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.css-content-part {
+    display: flex;
+    flex-direction: row;
+    background-color: #DCC7B4;
+    height: 80vh;
+    align-items: center;
+    justify-content: space-evenly;
+    color: black;
+}
+
+.css-content-text-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.css-content-text-part h1 {
+    font-size: 80px;
+}
+
+.css-content-text-part p {
+    font-size: 20px;
+}
+
+.css-content-text-part button {
+    border-radius: 30px;
+    width: 170px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.css-content-text-part button:nth-child(3) {
+    background-color: #F4A896;
+}
+
+.css-content-text-part button:nth-child(4) {
+    background-color: #C5B3E6;
+}
+
+.css-content-text-part button:nth-child(5) {
+    background-color: #AEE5D8;
+}
+
+/* Soft hover effect */
+.css-content-text-part button:hover {
+    transform: scale(1.05); /* Slightly enlarges the button */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.css-content-image-part img {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.js-content-part {
+    display: flex;
+    flex-direction: row;
+    background-color: #B6D2C3;
+    height: 80vh;
+    align-items: center;
+    justify-content: space-evenly;
+    color: black;
+}
+
+.js-content-text-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.js-content-text-part h1 {
+    font-size: 80px;
+}
+
+.js-content-text-part p {
+    font-size: 20px;
+}
+
+.js-content-text-part button {
+    border-radius: 30px;
+    width: 170px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.js-content-text-part button:nth-child(3) {
+    background-color: #F4A896;
+}
+
+.js-content-text-part button:nth-child(4) {
+    background-color: #C5B3E6;
+}
+
+.js-content-text-part button:nth-child(5) {
+    background-color: #AEE5D8;
+}
+
+/* Soft hover effect */
+.js-content-text-part button:hover {
+    transform: scale(1.05); /* Slightly enlarges the button */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.js-content-image-part img {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.python-content-part {
+    display: flex;
+    flex-direction: row;
+    background-color: #E8C4C8;
+    height: 80vh;
+    align-items: center;
+    justify-content: space-evenly;
+    color: black;
+}
+
+.python-content-text-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.python-content-text-part h1 {
+    font-size: 80px;
+}
+
+.python-content-text-part p {
+    font-size: 20px;
+}
+
+.python-content-text-part button {
+    border-radius: 30px;
+    width: 170px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.python-content-text-part button:nth-child(3) {
+    background-color: #F4A896;
+}
+
+.python-content-text-part button:nth-child(4) {
+    background-color: #C5B3E6;
+}
+
+.python-content-text-part button:nth-child(5) {
+    background-color: #AEE5D8;
+}
+
+/* Soft hover effect */
+.python-content-text-part button:hover {
+    transform: scale(1.05); /* Slightly enlarges the button */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.python-content-image-part img {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.sql-content-part {
+    display: flex;
+    flex-direction: row;
+    background-color: #D1F1D1;
+    height: 80vh;
+    align-items: center;
+    justify-content: space-evenly;
+    color: black;
+}
+
+.sql-content-text-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.sql-content-text-part h1 {
+    font-size: 80px;
+}
+
+.sql-content-text-part p {
+    font-size: 20px;
+}
+
+.sql-content-text-part button {
+    border-radius: 30px;
+    width: 170px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.sql-content-text-part button:nth-child(3) {
+    background-color: #F4A896;
+}
+
+.sql-content-text-part button:nth-child(4) {
+    background-color: #C5B3E6;
+}
+
+.sql-content-text-part button:nth-child(5) {
+    background-color: #AEE5D8;
+}
+
+/* Soft hover effect */
+.sql-content-text-part button:hover {
+    transform: scale(1.05); /* Slightly enlarges the button */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.sql-content-image-part img {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+}
