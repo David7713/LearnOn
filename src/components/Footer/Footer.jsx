@@ -14,7 +14,7 @@ const Footer = () => {
             <div>Learn <label id='on'> On</label></div>
 
             <ul>
-                <li>Documentation</li>
+                <li>Quiz</li>
                 <li>Downloads</li>
                 <li>Certification</li>
                 <li>AI <SiGooglegemini></SiGooglegemini></li>
@@ -103,6 +103,7 @@ Copyright 2024 by LearnOn. All Rights Reserved. Learn <label id='on'>On</label> 
 </div>
 
 </div>
+
     </div>
   )
 }

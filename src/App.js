@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
-import Documentation from './pages/Documentation/Documentation';
+import Quiz from './pages/Quiz/Quiz';
 import Download from './pages/Download/Download';
 import Certification from './pages/Certification/Certification';
 import AI from './pages/AI/Ai';
@@ -30,7 +30,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/documentation" element={<Documentation />} />
+        <Route path="/quiz" element={<Quiz />} />
         <Route path="/download" element={<Download />} />
         <Route path="/certification" element={<Certification />} />
         <Route path="/ai-chat" element={<AI />} />
