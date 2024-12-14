@@ -6,7 +6,7 @@ import Carousel from '../../../components/Carousel/Carousel';
 import { FaAngleLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-
+import Footer from '../../../components/Footer/Footer'
 const Css = () => {
   const [selectedTopicId, setSelectedTopicId] = useState(1);
 
@@ -66,6 +66,7 @@ const Css = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 };
