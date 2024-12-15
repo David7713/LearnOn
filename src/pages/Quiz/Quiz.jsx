@@ -4,8 +4,16 @@ import './Quiz.css';
 import NavBar from '../../components/NavBar/NavBar';
 import Carousel from '../../components/Carousel/Carousel';
 import Footer from '../../components/Footer/Footer';
+import { Link } from 'react-router-dom'; // Assuming you're using React Router
+import { useParams } from 'react-router-dom';
 
 const Quiz = () => {
+  const { category } = useParams(); // Get the category from the URL
+  useEffect(() => {
+    if (category && quizData[category]) {
+      startQuiz(category); // Initialize the quiz for the selected category
+    }
+  }, [category]);
   const [quizCategory, setQuizCategory] = useState(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState('');
@@ -91,12 +99,18 @@ const Quiz = () => {
 
   const timeSpent = () => {
     if (startTime && endTime) {
-      const seconds = Math.floor((endTime - startTime) / 1000);
-      return `${seconds} seconds`;
+      const totalSeconds = Math.floor((endTime - startTime) / 1000);
+  
+      if (totalSeconds >= 60) {
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        return `${minutes} minutes and ${seconds} seconds`;
+      }
+      return `${totalSeconds} seconds`;
     }
     return '0 seconds';
   };
-
+  
   // Render method for category selection
   const renderCategorySelection = () => (
     <div className="quiz-page">
@@ -105,19 +119,19 @@ const Quiz = () => {
       <div className="quiz-category-selection">
         <h2>Select a Quiz</h2>
         {Object.keys(quizData).map((category) => (
-          <button
+          <Link
             key={category}
-            onClick={() => startQuiz(category)}
+            to={`/quiz/${category}`} // Generate dynamic links
             className="quiz-category-button"
+            onClick={() => startQuiz(category)} // Set up the quiz category on click
           >
-            {category} Quiz
-          </button>
+            {category.charAt(0).toUpperCase() + category.slice(1)} Quiz
+          </Link>
         ))}
       </div>
       <Footer />
     </div>
   );
-
   // Render method for quiz results
   const renderQuizResults = () => (
     <div className="quiz-page">

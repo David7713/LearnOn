@@ -93,7 +93,24 @@
   align-items: center; /* Aligns items vertically in the center */
   gap: 50px;
 }
+.quiz-link,
+.language-link,
+.books-link {
+  color: white ;
+}
 
+.quiz-link:hover {
+  color: #9228e9 !important; /* Color change on hover for both classes */
+}
+
+.language-link:hover{
+  color: #9228e9 !important; /* Color change on hover for both classes */
+
+}
+.books-link:hover{
+  color: #9228e9 !important; /* Color change on hover for both classes */
+
+}
 .footer-social-media-part ul {
   display: flex;
   flex-direction: row;

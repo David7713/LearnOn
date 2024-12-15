@@ -17,7 +17,7 @@ const Content = () => {
 
 <button>Learn HTML</button>
 <button>Video Tutorial</button>
-<button>Exercises</button>
+<button>Quiz</button>
         </div>
        <div className='html-content-image-part'>
         <img src={htmlImage}></img>
@@ -40,7 +40,7 @@ const Content = () => {
 
 <button>Learn CSS</button>
 <button>Video Tutorial</button>
-<button>Exercises</button>
+<button>Quiz</button>
         </div>
        <div className='css-content-image-part'>
         <img src={cssImage}></img>
@@ -84,7 +84,7 @@ const Content = () => {
 
 <button>Learn Python</button>
 <button>Video Tutorial</button>
-<button>Exercises</button>
+<button>Quiz</button>
         </div>
        <div className='python-content-image-part'>
         <img src={pythonImage}></img>
@@ -103,7 +103,7 @@ const Content = () => {
 
 <button>Learn MySql</button>
 <button>Video Tutorial</button>
-<button>Exercises</button>
+<button>Quiz</button>
         </div>
        <div className='sql-content-image-part'>
         <img src={sqlImage}></img>

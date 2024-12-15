@@ -7,16 +7,14 @@ import Footer from '../../components/Footer/Footer';
 const programmingLanguages = [
   { name: 'HTML', file: 'html.pdf' },
   { name: 'CSS', file: 'css.pdf' },
-  { name: 'JavaScript', file: 'example-javascript.pdf' },
-  { name: 'React', file: 'example-react.pdf' },
-  { name: 'TypeScript', file: 'example-typescript.pdf' },
-  { name: 'Node', file: 'example-node.pdf' },
-  { name: 'MySQL', file: 'example-mysql.pdf' },
-  { name: 'Git', file: 'example-git.pdf' },
-  { name: 'GitHub', file: 'example-github.pdf' },
-  { name: 'Tailwind', file: 'example-tailwind.pdf' },
-  { name: 'C++', file: 'example-cplusplus.pdf' },
-  { name: 'PHP', file: 'example-php.pdf' },
+  { name: 'JavaScript', file: 'js.pdf' },
+  { name: 'React', file: 'react.pdf' },
+  { name: 'TypeScript', file: 'ts.pdf' },
+  { name: 'Node', file: 'node.pdf' },
+  { name: 'MySQL', file: 'mysql.pdf' },
+  { name: 'C++', file: 'c++.pdf' },
+  { name: 'PHP', file: 'php.pdf' },
+  { name: 'Python', file: 'python.pdf' },
 ];
 
 const Download = () => {

@@ -15,3 +15,11 @@ body{
     font-family: "Montserrat", serif;
     background-color: black;
 }
+
+.loader-container{
+    display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+              margin: 0;
+  }
