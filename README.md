@@ -1,70 +1,88 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# LearnOn Educational Platform
+Under Development 
+LearnOn is an educational platform designed to help beginner programmers kickstart their coding journey. While still under development, the platform already includes several features aimed at making learning interactive and accessible.
 
-## Available Scripts
+Current features include:
 
-In the project directory, you can run:
+- **Home Page**: A welcoming and user-friendly interface.  
+- **Programming Languages**: Learn the basics of various programming languages step-by-step.  
+- **Quizzes**: Test your knowledge with interactive quizzes.  
+- **E-Books**: Access a collection of e-books to dive deeper into programming concepts.  
+- **Video Courses**: Learn visually with engaging video tutorials.  
 
-### `npm start`
+LearnOn is built with the vision of providing a comprehensive learning experience, making coding easier and more fun for beginners.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  ## LearnOn Educational Platform
+![App Screenshot](https://github.com/David7713/LearnOn/blob/main/src/assets/content%20assets/Screenshots/Screenshot_2.png?raw=true)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Front End
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![HTML](https://img.shields.io/badge/-HTML-orange?logo=html5&logoColor=white)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![CSS](https://img.shields.io/badge/-CSS-blue?logo=css3&logoColor=white)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![React](https://img.shields.io/badge/-React-blue?logo=react&logoColor=white)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Install my-project with npm
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+  git clone https://github.com/David7713/Nexus.git
+  cd nexus
+  npm install
+  npm run dev
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+    
+## Colors Used
 
-## Learn More
+| Color         | Hex                                                                |
+| ------------- | ------------------------------------------------------------------ |
+| Example Color | ![#0a192f](https://via.placeholder.com/10/000000?text=+) `#000000` |
+| Example Color | ![#9228e9](https://via.placeholder.com/10/9228e9?text=+) `#9228e9` |
+| Example Color | ![#A7C8E9](https://via.placeholder.com/10/A7C8E9?text=+) `#A7C8E9` |
+| Example Color | ![#C5B3E6](https://via.placeholder.com/10/C5B3E6?text=+) `#C5B3E6` |
+| Example Color | ![#F4A896](https://via.placeholder.com/10/A7C8E9?text=+) `#F4A896` |
+| Example Color | ![#333](https://via.placeholder.com/10/333?text=+) `#333` |
+| Example Color | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) `#FFFFFF` |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Screenshots
+   ## Home
+![App Screenshot](https://github.com/David7713/LearnOn/blob/main/src/assets/content%20assets/Screenshots/Screenshot_2.png?raw=true)
 
-### Code Splitting
+   ## Ebooks
+![App Screenshot](https://github.com/David7713/LearnOn/blob/main/src/assets/content%20assets/Screenshots/Screenshot_10.png?raw=true)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ## Quiz
+![App Screenshot](https://github.com/David7713/LearnOn/blob/main/src/assets/content%20assets/Screenshots/Screenshot_3.png?raw=true)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ## Video Courses 
+![App Screenshot](https://github.com/David7713/LearnOn/blob/main/src/assets/content%20assets/Screenshots/Screenshot_4.png?raw=true)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ## Ebooks
+![App Screenshot](https://github.com/David7713/LearnOn/blob/main/src/assets/content%20assets/Screenshots/Screenshot_5.png?raw=true)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+   ## Footer
+![App Screenshot](https://github.com/David7713/LearnOn/blob/main/src/assets/content%20assets/Screenshots/Screenshot_6.png?raw=true)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Feedback and Questions
+Thank you for exploring the LearnOn Educational Platform! I hope you find the features helpful and engaging as you begin your programming journey. If you have any feedback, questions, or suggestions about the platform or its development, feel free to reach out to me at:
+
+📧 Email: davo00771339@gmail.com
+
+We appreciate your interest and look forward to hearing from you! Have a great day!
+
