@@ -5,11 +5,12 @@ LearnOn is an educational platform designed to help beginner programmers kicksta
 
 Current features include:
 
-Home Page: A welcoming and user-friendly interface.
-Programming Languages: Learn the basics of various programming languages step-by-step.
-Quizzes: Test your knowledge with interactive quizzes.
-E-Books: Access a collection of e-books to dive deeper into programming concepts.
-Video Courses: Learn visually with engaging video tutorials.
+- **Home Page**: A welcoming and user-friendly interface.  
+- **Programming Languages**: Learn the basics of various programming languages step-by-step.  
+- **Quizzes**: Test your knowledge with interactive quizzes.  
+- **E-Books**: Access a collection of e-books to dive deeper into programming concepts.  
+- **Video Courses**: Learn visually with engaging video tutorials.  
+
 LearnOn is built with the vision of providing a comprehensive learning experience, making coding easier and more fun for beginners.
 
   ## LearnOn Educational Platform
