@@ -12,8 +12,8 @@ E-Books: Access a collection of e-books to dive deeper into programming concepts
 Video Courses: Learn visually with engaging video tutorials.
 LearnOn is built with the vision of providing a comprehensive learning experience, making coding easier and more fun for beginners.
 
-  ## Nexus Agency
-![App Screenshot](https://github.com/David7713/Nexus/blob/main/src/assets/Screenshots/Screenshot_2.png?raw=true)
+  ## LearnOn Educational Platform
+![App Screenshot](https://github.com/David7713/LearnOn/blob/main/src/assets/content%20assets/Screenshots/Screenshot_2.png?raw=true)
 
 
 
@@ -79,7 +79,7 @@ Install my-project with npm
 
 
 ## Feedback and Questions
-Thank you for exploring the Nexus Digital Marketing Agency website! I hope you enjoy your experience. If you have any questions, feedback, or suggestions about the site or the project, please feel free to reach out to me at:
+Thank you for exploring the LearnOn Educational Platform! I hope you find the features helpful and engaging as you begin your programming journey. If you have any feedback, questions, or suggestions about the platform or its development, feel free to reach out to me at:
 
 📧 Email: davo00771339@gmail.com
 
