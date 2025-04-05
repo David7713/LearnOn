@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+li{
+    list-style-type: none;
+}
+link, a {
+    text-decoration: none;
+
+}
+
+body{
+    font-family: "Montserrat", serif;
+
+}
+
+.loader-container{
+    display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+              margin: 0;
+  }

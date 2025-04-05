@@ -1,0 +1,83 @@
+.navBar-section {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 60px;
+    background-color: black;
+    position: fixed;
+    /* Makes the navbar fixed */
+    top: 0;
+    /* Sticks it to the top of the viewport */
+    left: 0;
+    /* Ensures it spans from the left of the screen */
+    right: 0;
+    /* Ensures it spans to the right of the screen */
+    z-index: 1000;
+    /* Ensures it stays on top of other elements */
+}
+
+.navBar-section ul {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    text-align: center;
+    align-items: center;
+    height: 50px;
+
+}
+
+.logo a {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.logo label {
+    color: #9228e9;
+    cursor: pointer;
+
+}
+
+.navBar-section ul li {
+    list-style-type: none;
+
+
+}
+
+.navBar-section ul li :hover {
+    background-color: #9228e9;
+
+}
+
+.navBar-section ul :hover {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    height: 50px;
+}
+
+.navBar-section ul a {
+    color: white;
+}
+
+.nav-actions :hover {
+    background-color: black !important;
+}
+
+.navBar-section ul li.active{
+    background-color: #9228e9;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    height: 50px;
+}
+
+
+
+.user-reg-login a:hover{
+    color: #9228e9;
+}

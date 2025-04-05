@@ -1,0 +1,106 @@
+/* Main container for the Reviews section */
+.reviews-container {
+    background-color: ;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .reviews-container h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .reviews-container p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+  }
+  
+  /* Cards grid for displaying reviews */
+  .reviews-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-items: center;
+  }
+  
+  /* Style for each review card */
+  .review-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    text-align: left;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Reviewer image styling */
+  .reviewer-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    float: left;
+    margin-bottom: 15px;
+  }
+  
+  /* Review text */
+  .review-text {
+    margin-left: 100px; /* Space for image */
+  }
+  
+  .testimonial {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  
+  .reviewer-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .reviewer-course {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+    display: block;
+  }
+  
+  .reviewer-rating {
+    margin-top: 10px;
+  }
+  
+  .star {
+    font-size: 20px;
+    color: #ccc;
+  }
+  
+  .star.filled {
+    color: #ff9800;
+  }
+  
+  /* Media Query for responsive design */
+  @media (max-width: 768px) {
+    .review-card {
+      width: 90%;
+    }
+    
+    .review-text {
+      margin-left: 0;
+    }
+  }
+  

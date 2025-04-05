@@ -1,0 +1,27 @@
+{
+    "frontend": [
+      {
+        "question": "What is HTML?",
+        "options": ["Markup language", "Programming language", "Style sheet", "Database"],
+        "correctAnswer": "Markup language"
+      },
+      {
+        "question": "What is CSS?",
+        "options": ["Programming language", "Style sheet", "Markup language", "Database"],
+        "correctAnswer": "Style sheet"
+      }
+    ],
+    "backend": [
+      {
+        "question": "What is Node.js?",
+        "options": ["JavaScript runtime", "Programming language", "Framework", "Library"],
+        "correctAnswer": "JavaScript runtime"
+      },
+      {
+        "question": "What is Express?",
+        "options": ["JavaScript framework", "Library", "Database", "Language"],
+        "correctAnswer": "JavaScript framework"
+      }
+    ]
+  }
+  
