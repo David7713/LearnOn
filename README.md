@@ -14,7 +14,7 @@ Current features include:
 LearnOn is built with the vision of providing a comprehensive learning experience, making coding easier and more fun for beginners.
 
   ## LearnOn Educational Platform
-![App Screenshot](https://github.com/David7713/LearnOn/blob/main/src/assets/content%20assets/Screenshots/Screenshot_2.png?raw=true)
+![App Screenshot](https://github.com/David7713/LearnOn/blob/main/src/assets/content%20assets/Screenshots/Main.png?raw=true)
 
 
 
@@ -33,10 +33,10 @@ LearnOn is built with the vision of providing a comprehensive learning experienc
 Install my-project with npm
 
 ```bash
-  git clone https://github.com/David7713/Nexus.git
-  cd nexus
+  git clone https://github.com/David7713/LearnOn.git
+  cd project
   npm install
-  npm run dev
+  npm start
 
 ```
     
