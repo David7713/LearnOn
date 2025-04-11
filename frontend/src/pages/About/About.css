@@ -1,0 +1,99 @@
+/* General About container */
+.about-container {
+  background-color: black;
+  padding: 40px;
+  margin-top: 100px;
+  height: 100vh;
+ 
+}
+
+/* Individual Section Styling */
+.about-section {
+  background-color: #333;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  padding: 40px;
+  color: white;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for sections */
+.about-section:hover {
+  transform: translateY(-10px);
+  background-color: #444;
+}
+
+.about-section h2 {
+  color: #9228e9;
+  font-size: 32px; /* Larger title font size */
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Stats Section */
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  padding: 40px;
+  border-radius: 20px;
+  margin-top: 40px;
+  overflow: hidden;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Stats Container */
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+/* Stat Item Styling */
+.stat-item {
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Stat Circle with numbers */
+.stat-circle {
+  width: 120px;
+  height: 120px;
+  background-color: #9228e9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: white;
+  margin-bottom: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for stats */
+.stat-circle:hover {
+  transform: scale(1.2);
+}
+
+.stat-item p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Make sure content is readable on all screens */
+@media screen and (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-item {
+    margin-bottom: 20px;
+  }
+}

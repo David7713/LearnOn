@@ -25,30 +25,31 @@
     text-align: center;
     align-items: center;
     height: 50px;
-
 }
 
 .logo a {
     color: white;
     font-size: 30px;
     font-weight: 600;
+    
 }
 
 .logo label {
     color: #9228e9;
     cursor: pointer;
-
 }
 
+.logo :hover{
+    text-decoration: none;
+}
 .navBar-section ul li {
     list-style-type: none;
-
-
+    
 }
 
 .navBar-section ul li :hover {
     background-color: #9228e9;
-
+    text-decoration: none;
 }
 
 .navBar-section ul :hover {
@@ -57,10 +58,12 @@
     text-align: center;
     align-items: center;
     height: 50px;
+    text-decoration: none;
 }
 
 .navBar-section ul a {
     color: white;
+    text-decoration: none;
 }
 
 .nav-actions :hover {
@@ -76,8 +79,7 @@
     height: 50px;
 }
 
-
-
 .user-reg-login a:hover{
     color: #9228e9;
 }
+

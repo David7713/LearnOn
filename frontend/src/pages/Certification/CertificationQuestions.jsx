@@ -1,176 +1,160 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import NavBar from '../../components/NavBar/NavBar';
-import './CertificationQuestions.css';
-import questionsData from './questions.json';
+import certificationQuestions from '../../pages/Certification/questions.json';
 
-const CertificationQuestions = ({ isLoggedIn }) => {
-  const { type } = useParams();
+const CertificationQuestions = () => {
+  const { type: course } = useParams();
   const navigate = useNavigate();
+
   const [questions, setQuestions] = useState([]);
-  const [answers, setAnswers] = useState({});
-  const [timeLeft, setTimeLeft] = useState(15 * 60); // 15 minutes in seconds
+  const [timer, setTimer] = useState(15 * 60); // 15 minutes in seconds
+  const [answered, setAnswered] = useState(false);
+  const [userAnswers, setUserAnswers] = useState({}); // Track user answers
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Load questions based on certification type
   useEffect(() => {
-    if (type === 'frontend') {
-      setQuestions(questionsData.frontend || []);
-    } else if (type === 'backend') {
-      setQuestions(questionsData.backend || []);
+    if (course && certificationQuestions[course]) {
+      setQuestions(certificationQuestions[course]);
+    } else {
+      setQuestions([]);
     }
 
-    // Initialize answers object
-    const initialAnswers = {};
-    (questionsData[type] || []).forEach((q, index) => {
-      initialAnswers[index] = '';
-    });
-    setAnswers(initialAnswers);
-  }, [type]);
-
-  // Timer logic
-  useEffect(() => {
-    if (timeLeft <= 0) {
-      handleSubmit();
-      return;
-    }
-
-    const timerId = setTimeout(() => {
-      setTimeLeft(timeLeft - 1);
+    const interval = setInterval(() => {
+      setTimer((prev) => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          alert("Time's up!");
+          // Auto-submit or navigate on time expiry
+          submitAnswers();
+          return 0;
+        }
+        return prev - 1;
+      });
     }, 1000);
 
-    return () => clearTimeout(timerId);
-  }, [timeLeft]);
+    return () => clearInterval(interval);
+  }, [course]);
 
-  // Format time as MM:SS
-  const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
-  // Handle answer selection
-  const handleAnswerChange = (questionIndex, answerValue) => {
-    setAnswers((prev) => ({
-      ...prev,
-      [questionIndex]: answerValue,
+  const handleAnswer = (questionId, selectedOption) => {
+    setUserAnswers((prevAnswers) => ({
+      ...prevAnswers,
+      [questionId]: selectedOption,
     }));
   };
 
-  // Submit test
-  const handleSubmit = async () => {
-    if (isSubmitting) return;
-    setIsSubmitting(true);
-    
-    console.log("Starting submission process...");
-  
-    // Calculate score
-    let correctAnswers = 0;
-    questions.forEach((question, index) => {
-      if (answers[index] === question.correctAnswer) {
-        correctAnswers++;
-      }
-    });
-  
-    const score = (correctAnswers / questions.length) * 100;
-    const passed = score >= 70;
-  
-    // Get user data from localStorage
-    const username = localStorage.getItem('username') || 'Unknown User';
-    const userId = localStorage.getItem('userId') || 0;
-    
-    console.log(`User ID: ${userId}, Username: ${username}, Score: ${score}`);
-  
-    // Create certification data object
-    const certificationData = {
-      userId,
-      username,
-      certificationType: type,
-      score,
-      passed,
-      completedAt: new Date().toISOString(),
-    };
-  
+  const submitCertification = async (courseType) => {
     try {
-      console.log('Sending data:', certificationData);
-      const response = await fetch('/api/certifications', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(certificationData),
-      });
-  
-      console.log('Response status:', response.status);
+      setIsSubmitting(true);
+      const token = localStorage.getItem('authToken');
       
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Error response:', errorText);
-        throw new Error(`HTTP error! Status: ${response.status}, Message: ${errorText}`);
+      if (!token) {
+        alert('You must be logged in to get certified');
+        navigate('/login');
+        return;
       }
-  
-      const data = await response.json();
-      console.log('Success response:', data);
-  
-      // Navigate to result page only if the certification is saved successfully
-      navigate('/certification/view', {
-        state: {
-          score,
-          correctAnswers,
-          totalQuestions: questions.length,
-          certificationType: type,
-          certificationId: data.certificationId,
-          username,
+
+      const response = await fetch('http://localhost:5000/api/certifications', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
         },
+        body: JSON.stringify({ courseType })
       });
+
+      if (!response.ok) {
+        throw new Error(`Failed to save certification: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("Certification saved:", data);
+      
+      alert('Congratulations! Your certification has been recorded.');
+      navigate('/certification'); // Redirect to certifications page
+      
     } catch (error) {
-      console.error('Error saving certification:', error);
-      alert(`There was an error saving your certification: ${error.message}. Please try again.`);
+      console.error("Error saving certification:", error);
+      alert(`Failed to save certification: ${error.message}`);
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const submitAnswers = () => {
+    let correctAnswers = 0;
+
+    questions.forEach((q) => {
+      // Compare the user answer with the correct answer
+      if (userAnswers[q.id] === q.answer) {
+        correctAnswers += 1;
+      }
+    });
+
+    const percentage = (correctAnswers / questions.length) * 100;
+
+    if (percentage >= 70) {
+      alert(`Congratulations, you passed with ${percentage.toFixed(2)}%!`);
+      // Save the certification to the database
+      submitCertification(course);
+    } else {
+      alert(`Unfortunately, you did not pass. You scored ${percentage.toFixed(2)}%. Try again!`);
+      navigate('/certification'); // Go back to certifications page
+    }
+
+    setAnswered(true);
+  };
+
+  if (!course || !certificationQuestions[course]) {
+    return <p>Invalid course selected.</p>;
+  }
 
   return (
-    <div className="certification-questions-container">
-      <NavBar isLoggedIn={isLoggedIn} />
-      <div className="questions-header">
-        <h1>{type === 'frontend' ? 'Frontend' : 'Backend'} Developer Certification</h1>
-        <div className="timer">Time Remaining: {formatTime(timeLeft)}</div>
-      </div>
+    <div>
+      <h1>{course.charAt(0).toUpperCase() + course.slice(1)} Certification Exam</h1>
+      <p>Time Remaining: {formatTime(timer)}</p>
 
-      <div className="questions-list">
-        {questions.map((question, index) => (
-          <div key={index} className="question-card">
-            <h3>Question {index + 1}</h3>
-            <p>{question.question}</p>
-            <div className="answer-options">
-              {question.options.map((option, optionIndex) => (
-                <div key={optionIndex} className="option">
-                  <input
-                    type="radio"
-                    id={`q${index}-o${optionIndex}`}
-                    name={`question-${index}`}
-                    value={option}
-                    checked={answers[index] === option}
-                    onChange={() => handleAnswerChange(index, option)}
-                  />
-                  <label htmlFor={`q${index}-o${optionIndex}`}>{option}</label>
-                </div>
-              ))}
+      {questions.map((q) => (
+        <div key={q.id} style={{ marginBottom: '20px' }}>
+          <h3>{q.question}</h3>
+          {q.options.map((option, index) => (
+            <div key={index}>
+              <input
+                type="radio"
+                id={`${q.id}-${index}`}
+                name={`question-${q.id}`}
+                value={option}
+                disabled={answered || isSubmitting}
+                onClick={() => handleAnswer(q.id, option)}
+              />
+              <label htmlFor={`${q.id}-${index}`}>{option}</label>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ))}
 
-      <div className="questions-footer">
+      {!answered && (
         <button 
-          className="submit-btn"
-          onClick={handleSubmit}
+          onClick={submitAnswers} 
           disabled={isSubmitting}
+          style={{ 
+            padding: '10px 20px', 
+            fontSize: '16px', 
+            backgroundColor: isSubmitting ? '#ccc' : '#4CAF50',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: isSubmitting ? 'not-allowed' : 'pointer'
+          }}
         >
           {isSubmitting ? 'Submitting...' : 'Submit Answers'}
         </button>
-      </div>
+      )}
     </div>
   );
 };

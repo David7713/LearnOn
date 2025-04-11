@@ -7,7 +7,7 @@ import { FaAngleLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Carousel from '../../../components/Carousel/Carousel';
-const Php = () => {
+const Php = ({ isLoggedIn }) => {
   const [selectedTopicId, setSelectedTopicId] = useState(1); // Default topic is the first one
 
   const handleTopicClick = (id) => {
@@ -30,7 +30,7 @@ const Php = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar isLoggedIn={isLoggedIn} />
       <Carousel></Carousel>
       <div className="php-container">
         <div className="topics-list">

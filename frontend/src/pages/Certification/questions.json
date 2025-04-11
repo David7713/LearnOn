@@ -1,27 +1,42 @@
 {
-    "frontend": [
-      {
-        "question": "What is HTML?",
-        "options": ["Markup language", "Programming language", "Style sheet", "Database"],
-        "correctAnswer": "Markup language"
-      },
-      {
-        "question": "What is CSS?",
-        "options": ["Programming language", "Style sheet", "Markup language", "Database"],
-        "correctAnswer": "Style sheet"
-      }
-    ],
-    "backend": [
-      {
-        "question": "What is Node.js?",
-        "options": ["JavaScript runtime", "Programming language", "Framework", "Library"],
-        "correctAnswer": "JavaScript runtime"
-      },
-      {
-        "question": "What is Express?",
-        "options": ["JavaScript framework", "Library", "Database", "Language"],
-        "correctAnswer": "JavaScript framework"
-      }
-    ]
-  }
-  
+  "frontend": [
+    {
+      "id": 1,
+      "question": "What does CSS stand for?",
+      "options": ["Cascading Style Sheets", "Creative Style System", "Computer Style Sheets", "Colorful Style Sheets"],
+      "answer": "Cascading Style Sheets"
+    },
+    {
+      "id": 2,
+      "question": "Which HTML tag is used to define an unordered list?",
+      "options": ["<ul>", "<ol>", "<li>", "<list>"],
+      "answer": "<ul>"
+    },
+    {
+      "id": 3,
+      "question": "Which property is used to change the background color in CSS?",
+      "options": ["color", "background-color", "bgcolor", "background"],
+      "answer": "background-color"
+    }
+  ],
+  "backend": [
+    {
+      "id": 1,
+      "question": "Which HTTP method is used to create new resources?",
+      "options": ["GET", "POST", "PUT", "DELETE"],
+      "answer": "POST"
+    },
+    {
+      "id": 2,
+      "question": "What does SQL stand for?",
+      "options": ["Structured Query Language", "Simple Query Language", "Stylish Question Language", "Statement Question Language"],
+      "answer": "Structured Query Language"
+    },
+    {
+      "id": 3,
+      "question": "Which of the following is a NoSQL database?",
+      "options": ["MySQL", "PostgreSQL", "MongoDB", "Oracle"],
+      "answer": "MongoDB"
+    }
+  ]
+}

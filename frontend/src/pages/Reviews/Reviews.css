@@ -1,106 +1,44 @@
-/* Main container for the Reviews section */
 .reviews-container {
-    background-color: ;
-    padding: 60px 20px;
-    text-align: center;
-  }
-  
-  .reviews-container h1 {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .reviews-container p {
-    font-size: 18px;
-    color: #777;
-    margin-bottom: 40px;
-  }
-  
-  /* Cards grid for displaying reviews */
-  .reviews-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    justify-items: center;
-  }
-  
-  /* Style for each review card */
-  .review-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 100%;
-    max-width: 350px;
-    text-align: left;
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .review-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Reviewer image styling */
-  .reviewer-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 20px;
-    float: left;
-    margin-bottom: 15px;
-  }
-  
-  /* Review text */
-  .review-text {
-    margin-left: 100px; /* Space for image */
-  }
-  
-  .testimonial {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 10px;
-    font-style: italic;
-  }
-  
-  .reviewer-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .reviewer-course {
-    font-size: 14px;
-    color: #888;
-    margin-top: 5px;
-    display: block;
-  }
-  
-  .reviewer-rating {
-    margin-top: 10px;
-  }
-  
-  .star {
-    font-size: 20px;
-    color: #ccc;
-  }
-  
-  .star.filled {
-    color: #ff9800;
-  }
-  
-  /* Media Query for responsive design */
-  @media (max-width: 768px) {
-    .review-card {
-      width: 90%;
-    }
-    
-    .review-text {
-      margin-left: 0;
-    }
-  }
-  
+  background-color: black;
+  padding: 40px;
+  margin-top: 100px;
+  height: 100vh; /* Keeps the container's height to 100% of the viewport height */
+ 
+}
+
+
+.review-card {
+  background-color: #333;
+  border-radius: 10px;
+  margin-bottom: 30px; /* Increased space between cards */
+  padding: 30px; /* Increased padding */
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 18px; /* Larger font size */
+}
+
+.review-card img {
+  width: 120px; /* Increased image size */
+  height: 120px; /* Increased image size */
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 30px; /* Increased margin between image and text */
+}
+
+.review-card h4 {
+  margin: 0;
+  color: #9228e9;
+  font-size: 24px; /* Increased name font size */
+}
+
+.review-card p {
+  margin: 8px 0; /* Increased margin between paragraphs */
+  font-size: 20px; /* Larger text */
+}
+
+.review-card .comment {
+  margin-top: 15px;
+  font-style: italic;
+  font-size: 22px; /* Larger comment text */
+}

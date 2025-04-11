@@ -35,33 +35,21 @@ import './App.css';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // Simulate loading delay
+  // Initialize isLoggedIn state based on localStorage
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+    const storedLoginStatus = localStorage.getItem('isLoggedIn');
+    if (storedLoginStatus === 'true') {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+
+    setLoading(false);  // Finish loading state
   }, []);
 
-  // Effect to keep authentication state in sync with localStorage
-  useEffect(() => {
-    const handleStorageChange = () => {
-      setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true');
-    };
-
-    // Listen for localStorage changes
-    window.addEventListener('storage', handleStorageChange);
-    
-    // Also check auth status on component mount
-    setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true');
-
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-    };
-  }, []);
-
-  // Auth check function
+  // Protected route component to check authentication status
   const ProtectedRoute = ({ children }) => {
     return isLoggedIn ? children : <Navigate to="/login" />;
   };
@@ -87,21 +75,21 @@ const App = () => {
         <>
           <Routes>
             <Route path="/" element={<Home isLoggedIn={isLoggedIn} />} />
-            
+
             {/* Protected routes */}
             <Route path="/quiz" element={<ProtectedRoute><Quiz isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
             <Route path="/quiz/:category" element={<ProtectedRoute><Quiz isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
             <Route path="/download" element={<ProtectedRoute><Download isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
-            
+
             {/* Certification routes */}
             <Route path="/certification" element={<ProtectedRoute><Certification isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
             <Route path="/certification/questions/:type" element={<ProtectedRoute><CertificationQuestions isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
             <Route path="/certification/view" element={<ProtectedRoute><CertificationView isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
-            
+
             <Route path="/ai-chat" element={<ProtectedRoute><AI isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
             <Route path="/video-course" element={<ProtectedRoute><VideoCourse isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
             <Route path="/user/:username" element={<ProtectedRoute><UserProfile isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
-     
+
             {/* Public routes */}
             <Route path="/login" element={<Login setIsLoggedIn={updateLoginState} />} />
             <Route path="/signup" element={<SignUp />} />

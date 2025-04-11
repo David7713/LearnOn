@@ -10,7 +10,7 @@ import { FaChevronRight } from "react-icons/fa";
 
 import { FaAngleLeft } from "react-icons/fa6";
 
-const Html = () => {
+const Html = ({ isLoggedIn }) => {
   const [selectedTopicId, setSelectedTopicId] = useState(1);
 
   const handleTopicClick = (id) => {
@@ -37,7 +37,7 @@ const Html = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar isLoggedIn={isLoggedIn} />
       <Carousel />
       <div className="html-container">
         <div className="topics-list">

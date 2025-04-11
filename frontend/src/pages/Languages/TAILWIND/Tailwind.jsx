@@ -8,7 +8,7 @@ import { FaChevronRight } from 'react-icons/fa';
 import Carousel from '../../../components/Carousel/Carousel';
 import { Link } from 'react-router-dom';
 
-const Tailwind = () => {
+const Tailwind = ({ isLoggedIn }) => {
   const [selectedTopicId, setSelectedTopicId] = useState(1); // Default topic is the first one
 
   const handleTopicClick = (id) => {
@@ -31,7 +31,7 @@ const Tailwind = () => {
 
   return (
     <>
-      <NavBar />
+     <NavBar isLoggedIn={isLoggedIn} />
       <Carousel />
       <div className="tailwind-container">
         <div className="topics-list">

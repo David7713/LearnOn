@@ -9,7 +9,7 @@ import Carousel from '../../../components/Carousel/Carousel';
 import { Link } from 'react-router-dom';
 
 
-const Github = () => {
+const Github = ({ isLoggedIn }) => {
   const [selectedTopicId, setSelectedTopicId] = useState(1); // Default topic is the first one
 
   const handleTopicClick = (id) => {
@@ -32,7 +32,7 @@ const Github = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar isLoggedIn={isLoggedIn} />
       <Carousel />
       <div className="github-container">
         <div className="topics-list">

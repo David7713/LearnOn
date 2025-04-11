@@ -129,6 +129,7 @@ const Quiz = ( {isLoggedIn}) => {
           </Link>
         ))}
       </div>
+      <Footer></Footer>
     </div>
   );
   // Render method for quiz results

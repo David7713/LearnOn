@@ -7,7 +7,7 @@ import { FaAngleLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Footer from '../../../components/Footer/Footer'
-const Css = () => {
+const Css = ({ isLoggedIn }) => {
   const [selectedTopicId, setSelectedTopicId] = useState(1);
 
   const handleTopicClick = (id) => {
@@ -34,7 +34,7 @@ const Css = () => {
 
   return (
     <>
-      <NavBar />
+       <NavBar isLoggedIn={isLoggedIn} />
       <Carousel />
       <div className="css-container">
         <div className="topics-list">

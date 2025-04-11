@@ -8,7 +8,7 @@ import { FaAngleRight } from "react-icons/fa";
 import { FaChevronRight } from 'react-icons/fa';
 import Carousel from '../../../components/Carousel/Carousel';
 import { Link } from 'react-router-dom';
-const Mysql = () => {
+const Mysql = ({ isLoggedIn }) => {
   const [selectedTopicId, setSelectedTopicId] = useState(1); // Default topic is the first one
 
   const handleTopicClick = (id) => {
@@ -31,7 +31,7 @@ const Mysql = () => {
 
   return (
     <>
-      <NavBar />
+   <NavBar isLoggedIn={isLoggedIn} />
       <Carousel />
       <div className="mysql-container">
         <div className="topics-list">

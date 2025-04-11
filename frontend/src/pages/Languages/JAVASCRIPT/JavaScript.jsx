@@ -9,7 +9,7 @@ import { FaChevronRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { FaAngleRight } from "react-icons/fa";
 
-const Javascript = () => {
+const Javascript = ({ isLoggedIn }) => {
   const [selectedTopicId, setSelectedTopicId] = useState(1); // Default topic is the first one
 
   const handleTopicClick = (id) => {
@@ -32,9 +32,9 @@ const Javascript = () => {
 
   return (
     <>
-          <NavBar />
+          <NavBar isLoggedIn={isLoggedIn} />
           <Carousel />
-      <NavBar />
+    
       <div className="javascript-container">
         <div className="topics-list">
           {javascriptTopics.map((topic) => (

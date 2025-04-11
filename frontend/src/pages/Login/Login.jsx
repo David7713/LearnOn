@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
@@ -12,6 +12,12 @@ const Login = ({ setIsLoggedIn }) => {
   });
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      navigate('/');  // Redirect to home if already logged in
+    }
+  }, [navigate]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,15 +33,15 @@ const Login = ({ setIsLoggedIn }) => {
     axios.post('http://localhost:5000/api/auth/login', formData)
       .then(response => {
         console.log('Login successful:', response.data);
-        
+
         // Store the JWT token and user info
         localStorage.setItem('authToken', response.data.token);
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('username', response.data.user.username);
-        
+
         // Set logged-in status in parent component through props
         setIsLoggedIn(true);
-        
+
         // Redirect to home page instead of user profile
         navigate('/');
       })
