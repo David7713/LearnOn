@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './NavBar.css';
 import { SiGooglegemini } from "react-icons/si";
 import { IoMoon } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
-
-
-
+import { CiLogout } from "react-icons/ci";
+import { Menu, X } from 'lucide-react';
 
 const API_BASE_URL = 'http://localhost:5000';
 
@@ -19,6 +18,14 @@ const NavBar = ({ isLoggedIn }) => {
   ]);
   const [userInput, setUserInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Reset body overflow when component unmounts
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('authToken');
@@ -31,6 +38,29 @@ const NavBar = ({ isLoggedIn }) => {
   const toggleAiPopup = (e) => {
     e.preventDefault();
     setShowAiPopup(!showAiPopup);
+    // Close mobile menu if it's open
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+      document.body.style.overflow = 'unset';
+    }
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    document.body.style.overflow = !isMenuOpen ? 'hidden' : 'unset';
+  };
+
+  // Handle overlay click
+  const handleOverlayClick = () => {
+    setIsMenuOpen(false);
+    document.body.style.overflow = 'unset';
+  };
+
+  const handleNavLinkClick = () => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+      document.body.style.overflow = 'unset';
+    }
   };
 
   const handleSendMessage = async () => {
@@ -69,35 +99,77 @@ const NavBar = ({ isLoggedIn }) => {
 
   return (
     <>
+      {isMenuOpen && (
+        <div 
+          className="mobile-overlay" 
+          onClick={handleOverlayClick}
+        />
+      )}
       <div className="navBar-section">
         <div className="logo">
           <Link to="/">Learn <label>On</label></Link>
         </div>
-        <ul className="nav-links">
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/reviews">Reviews</Link></li>
+        
+        <div className="nav-container">
+          {/* Mobile-visible auth buttons and username */}
+          <div className="mobile-visible-elements">
+            {!isLoggedIn && (
+              <div className="mobile-auth-buttons">
+                <Link to="/login" className="auth-btn login-btn">Login</Link>
+                <Link to="/signup" className="auth-btn signup-btn">SignUp</Link>
+              </div>
+            )}
+            
+            {isLoggedIn && (
+              <div className="mobile-user-info">
+                <span className="username-display">Welcome, {username}</span>
+                <button onClick={handleLogout} className="mobile-logout-btn">
+                  <CiLogout className='logout-icon' />
+                </button>
+              </div>
+            )}
+          </div>
+          
+          <button 
+            className="mobile-menu-button"
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+        
+        <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+          <li><Link to="/about" onClick={handleNavLinkClick}>About Us</Link></li>
+          <li><Link to="/reviews" onClick={handleNavLinkClick}>Reviews</Link></li>
           {!isLoggedIn && (
-            <>
-              <li><Link to="/login">Login</Link></li>
-              <li><Link to="/signup">SignUp</Link></li>
-            </>
+            // These will only show in desktop view or when mobile menu is open
+            <div className="desktop-only-auth">
+              <li>
+                <Link to="/login" className="auth-btn login-btn" onClick={handleNavLinkClick}>Login</Link>
+              </li>
+              <li>
+                <Link to="/signup" className="auth-btn signup-btn" onClick={handleNavLinkClick}>SignUp</Link>
+              </li>
+            </div>
           )}
           {isLoggedIn && (
             <>
-              <li><Link to="/quiz">Quiz</Link></li>
-              <li><Link to="/download">Download</Link></li>
-              <li><Link to="/certification">Certification</Link></li>
+              <li><Link to="/quiz" onClick={handleNavLinkClick}>Quiz</Link></li>
+              <li><Link to="/download" onClick={handleNavLinkClick}>Download</Link></li>
+              <li><Link to="/certification" onClick={handleNavLinkClick}>Certification</Link></li>
               <li><Link to="#" onClick={toggleAiPopup}>AI <SiGooglegemini /></Link></li>
-              <li><Link to="/video-course">Video Course</Link></li>
-              <li><button onClick={handleLogout} className="logout-btn">Logout</button></li>
-              {username && <li className="username-display">Welcome, {username}</li>}
+              <li><Link to="/video-course" onClick={handleNavLinkClick}>Video Course</Link></li>
+              
+              {/* Username will display in desktop view or when mobile menu is open */}
+              <li className="desktop-only-username">Welcome, {username}</li>
+              <li className="desktop-only-logout">
+                <button onClick={handleLogout} className="logout-btn">
+                  <CiLogout className='logout-icon' />Logout
+                </button>
+              </li>
             </>
           )}
-        </ul>
-        <ul className="nav-actions">
-          <li>
-            <IoMoon />
-          </li>
         </ul>
       </div>
 

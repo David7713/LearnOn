@@ -46,4 +46,63 @@
       transform: translateX(-100%); /* Move the list completely to the left */
     }
   }
-  
+  /* Tablet screens */
+@media (max-width: 1024px) {
+  .carousel-section {
+    height: 50px;
+    top: 55px;
+  }
+
+  .carousel-section ul a {
+    font-size: 18px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .carousel-section {
+    height: 40px;
+    top: 50px;
+    
+  }
+
+  .carousel-section ul a {
+    font-size: 16px;
+    gap: 20px; /* Reduce the space between items */
+  }
+  .carousel-section ul {
+    display: flex;
+    justify-content: start; /* Start items on the left */
+    align-items: center;
+    gap: 30px; /* Add spacing between items */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    animation: scroll 20s linear infinite; /* Infinite scrolling animation */
+  }
+}
+
+
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .carousel-section {
+    height: 35px;
+    top: 55px;
+  }
+
+  .carousel-section ul a {
+    font-size: 14px;
+    gap: 15px; /* Further reduce the space between items */
+  }
+  .carousel-section ul {
+    display: flex;
+    justify-content: start; /* Start items on the left */
+    align-items: center;
+    gap: 30px; /* Add spacing between items */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    animation: scroll 20s linear infinite; /* Infinite scrolling animation */
+  }
+}

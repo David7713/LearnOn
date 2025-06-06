@@ -14,7 +14,7 @@ import SignUp from './pages/SignUp/SignUp';
 import Footer from './components/Footer/Footer';
 import About from './pages/About/About';
 import Reviews from './pages/Reviews/Reviews';
-import UserProfile from './pages/UserProfile/UserProfile'; // Make sure you have this component
+
 // Import the language/topic components
 import Html from './pages/Languages/HTML/Html';
 import Css from './pages/Languages/CSS/Css';
@@ -80,22 +80,16 @@ const App = () => {
             <Route path="/quiz" element={<ProtectedRoute><Quiz isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
             <Route path="/quiz/:category" element={<ProtectedRoute><Quiz isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
             <Route path="/download" element={<ProtectedRoute><Download isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
-
             {/* Certification routes */}
             <Route path="/certification" element={<ProtectedRoute><Certification isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
             <Route path="/certification/questions/:type" element={<ProtectedRoute><CertificationQuestions isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
-            <Route path="/certification/view" element={<ProtectedRoute><CertificationView isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
-
             <Route path="/ai-chat" element={<ProtectedRoute><AI isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
             <Route path="/video-course" element={<ProtectedRoute><VideoCourse isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
-            <Route path="/user/:username" element={<ProtectedRoute><UserProfile isLoggedIn={isLoggedIn} /></ProtectedRoute>} />
-
             {/* Public routes */}
             <Route path="/login" element={<Login setIsLoggedIn={updateLoginState} />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/about" element={<About isLoggedIn={isLoggedIn} />} />
             <Route path="/reviews" element={<Reviews isLoggedIn={isLoggedIn} />} />
-
             {/* Language routes */}
             <Route path="/languages/html" element={<Html isLoggedIn={isLoggedIn} />} />
             <Route path="/languages/css" element={<Css isLoggedIn={isLoggedIn} />} />

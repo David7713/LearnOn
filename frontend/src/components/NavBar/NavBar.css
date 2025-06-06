@@ -3,35 +3,25 @@
     flex-direction: row;
     text-align: center;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     height: 60px;
     background-color: black;
     position: fixed;
-    /* Makes the navbar fixed */
     top: 0;
-    /* Sticks it to the top of the viewport */
     left: 0;
-    /* Ensures it spans from the left of the screen */
     right: 0;
-    /* Ensures it spans to the right of the screen */
     z-index: 1000;
-    /* Ensures it stays on top of other elements */
+    padding: 0 20px;
 }
 
-.navBar-section ul {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    text-align: center;
-    align-items: center;
-    height: 50px;
+.logo {
+    z-index: 1001;
 }
 
 .logo a {
     color: white;
     font-size: 30px;
     font-weight: 600;
-    
 }
 
 .logo label {
@@ -42,9 +32,21 @@
 .logo :hover{
     text-decoration: none;
 }
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    text-align: center;
+    align-items: center;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
 .navBar-section ul li {
     list-style-type: none;
-    
 }
 
 .navBar-section ul li :hover {
@@ -52,25 +54,19 @@
     text-decoration: none;
 }
 
-.navBar-section ul :hover {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    align-items: center;
-    height: 50px;
-    text-decoration: none;
-}
-
 .navBar-section ul a {
     color: white;
     text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .nav-actions :hover {
     background-color: black !important;
 }
 
-.navBar-section ul li.active{
+.navBar-section ul li.active {
     background-color: #9228e9;
     display: flex;
     flex-direction: row;
@@ -79,7 +75,368 @@
     height: 50px;
 }
 
-.user-reg-login a:hover{
+.user-reg-login a:hover {
     color: #9228e9;
 }
 
+/* Navigation container for mobile elements */
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Mobile visible elements */
+.mobile-visible-elements {
+    display: none;
+}
+
+/* Mobile auth buttons */
+.mobile-auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Mobile user info */
+.mobile-user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.mobile-logout-btn {
+    background: none;
+    border: none;
+    color: #9228e9;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+/* General Auth Button Styling */
+.auth-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #9228e9; /* Purple border */
+    text-align: center;
+}
+
+/* Specific styling for Login Button */
+.login-btn {
+    color: #9228e9; /* Purple text */
+    background-color: transparent; /* Transparent background */
+}
+
+/* Specific styling for SignUp Button */
+.signup-btn {
+    background-color: #9228e9; /* Purple background */
+    color: white;
+    border: 2px solid #9228e9; /* Purple border */
+}
+
+.logout-btn {
+    border: none;
+    background-color: black;
+    color: #9228e9;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logout-btn:hover{
+  background-color: black !important;
+}
+
+.logout-icon:hover{
+    background-color: black !important; 
+}
+
+/* Mobile menu button */
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: #9228e9;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+/* Mobile overlay */
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Username display */
+.username-display {
+    color: white;
+    padding: 5px 10px;
+}
+
+/* AI Chat Popup Styles (Unchanged) */
+.ai-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 1002;
+    overflow: hidden;
+}
+
+.ai-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #9228e9;
+    color: white;
+}
+
+.ai-popup-header h3 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.ai-popup-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 15px;
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+
+.ai-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.user-message, .ai-message {
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 80%;
+    word-break: break-word;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #9228e9;
+    color: white;
+}
+
+.ai-message {
+    align-self: flex-start;
+    background-color: #e0e0e0;
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.ai-icon {
+    margin-top: 3px;
+    color: #9228e9;
+}
+
+.ai-input-container {
+    display: flex;
+    gap: 10px;
+}
+
+.ai-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+}
+
+.ai-send-btn {
+    background-color: #9228e9;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.ai-send-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.loading {
+    opacity: 0.7;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    .navBar-section {
+        padding: 0 15px;
+    }
+    
+    .mobile-menu-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mobile-overlay {
+        display: block;
+    }
+    
+    /* Show mobile-visible elements on smaller screens */
+    .mobile-visible-elements {
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Hide desktop-only elements in mobile view */
+    .desktop-only-auth,
+    .desktop-only-username,
+    .desktop-only-logout {
+        display: none;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 100%;
+        max-width: 300px;
+        height: calc(100vh - 60px);
+        background-color: black;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 20px 0;
+        gap: 15px;
+        transition: right 0.3s ease;
+        overflow-y: auto;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .navBar-section ul li {
+        width: 100%;
+        height: auto;
+    }
+    
+    .navBar-section ul a {
+        display: block;
+        width: 100%;
+        padding: 12px 20px;
+        border-radius: 0;
+    }
+    
+    .auth-btn {
+        border-radius: 5px;
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+    
+    .username-display {
+        font-size: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 120px;
+    }
+    
+    .logout-item {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .logout-item :hover{
+        background-color: black;
+    }
+    
+    .logout-btn {
+        margin: 0 auto;
+        padding: 10px 20px;
+    }
+    
+    /* AI Popup adjustments for mobile */
+    .ai-popup {
+        width: 90%;
+        height: 70vh;
+        bottom: 10px;
+        right: 5%;
+        left: 5%;
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media screen and (max-width: 480px) {
+    .logo a {
+        font-size: 24px;
+    }
+    
+    .nav-links {
+        max-width: 250px;
+    }
+    
+    .auth-btn {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+    
+    .username-display {
+        max-width: 100px;
+    }
+}
+
+/* For medium to large screens: desktop view */
+@media screen and (min-width: 769px) {
+    .mobile-visible-elements {
+        display: none;
+    }
+    
+    .desktop-only-auth,
+    .desktop-only-username,
+    .desktop-only-logout {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+}

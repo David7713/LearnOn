@@ -298,3 +298,152 @@
     height: 400px;
     border-radius: 10px;
 }
+
+
+.content-link-text{
+    color: black;;
+}
+
+/* Original CSS remains unchanged, media queries added at the bottom */
+
+/* Media Queries for Tablet */
+@media (max-width: 1024px) {
+    /* Common styles for all content sections on tablet */
+    .html-content-part,
+    .css-content-part,
+    .js-content-part,
+    .python-content-part,
+    .sql-content-part {
+        padding: 20px;
+        height: auto;
+        min-height: 70vh;
+    }
+    
+    /* Text part adjustments */
+    .html-content-text-part h1,
+    .css-content-text-part h1,
+    .js-content-text-part h1,
+    .python-content-text-part h1,
+    .sql-content-text-part h1 {
+        font-size: 60px;
+    }
+    
+    .html-content-text-part p,
+    .css-content-text-part p,
+    .js-content-text-part p,
+    .python-content-text-part p,
+    .sql-content-text-part p {
+        font-size: 18px;
+    }
+    
+    /* Image adjustments */
+    .html-content-image-part img,
+    .css-content-image-part img,
+    .js-content-image-part img,
+    .python-content-image-part img,
+    .sql-content-image-part img {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    /* Common styles for all content sections on mobile */
+    .html-content-part,
+    .css-content-part,
+    .js-content-part,
+    .python-content-part,
+    .sql-content-part {
+        flex-direction: column;
+        padding: 30px 15px;
+        height: auto;
+        min-height: 100vh;
+        justify-content: center;
+        gap: 30px;
+    }
+    
+    /* Text part adjustments */
+    .html-content-text-part,
+    .css-content-text-part,
+    .js-content-text-part,
+    .python-content-text-part,
+    .sql-content-text-part {
+        order: 1;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .html-content-text-part h1,
+    .css-content-text-part h1,
+    .js-content-text-part h1,
+    .python-content-text-part h1,
+    .sql-content-text-part h1 {
+        font-size: 48px;
+    }
+    
+    .html-content-text-part p,
+    .css-content-text-part p,
+    .js-content-text-part p,
+    .python-content-text-part p,
+    .sql-content-text-part p {
+        font-size: 16px;
+    }
+    
+    /* Button adjustments */
+    .html-content-text-part button,
+    .css-content-text-part button,
+    .js-content-text-part button,
+    .python-content-text-part button,
+    .sql-content-text-part button {
+        width: 80%;
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+    
+    /* Image part adjustments */
+    .html-content-image-part,
+    .css-content-image-part,
+    .js-content-image-part,
+    .python-content-image-part,
+    .sql-content-image-part {
+        order: 2;
+    }
+    
+    .html-content-image-part img,
+    .css-content-image-part img,
+    .js-content-image-part img,
+    .python-content-image-part img,
+    .sql-content-image-part img {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .html-content-text-part h1,
+    .css-content-text-part h1,
+    .js-content-text-part h1,
+    .python-content-text-part h1,
+    .sql-content-text-part h1 {
+        font-size: 36px;
+    }
+    
+    .html-content-text-part p,
+    .css-content-text-part p,
+    .js-content-text-part p,
+    .python-content-text-part p,
+    .sql-content-text-part p {
+        font-size: 14px;
+    }
+    
+    .html-content-image-part img,
+    .css-content-image-part img,
+    .js-content-image-part img,
+    .python-content-image-part img,
+    .sql-content-image-part img {
+        width: 240px;
+        height: 240px;
+    }
+}

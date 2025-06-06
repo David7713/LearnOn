@@ -73,3 +73,82 @@
   text-decoration: none;
   font-weight: bold;
 }
+/* Tablet screens */
+@media (max-width: 1024px) {
+  .download-container {
+    padding: 100px 40px;
+  }
+
+  .download-container h1 {
+    font-size: 32px;
+  }
+
+  .download-container p {
+    font-size: 16px;
+  }
+
+  .language-card h2 {
+    font-size: 20px;
+  }
+
+  .download-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .download-container {
+    padding: 80px 20px;
+  }
+
+  .download-container h1 {
+    font-size: 28px;
+  }
+
+  .download-container p {
+    font-size: 15px;
+  }
+
+  .languages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .language-card {
+    padding: 16px;
+  }
+
+  .language-card h2 {
+    font-size: 18px;
+  }
+
+  .download-button {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .download-container {
+    padding: 60px 10px;
+  }
+
+  .download-container h1 {
+    font-size: 24px;
+  }
+
+  .download-container p {
+    font-size: 14px;
+  }
+
+  .language-card h2 {
+    font-size: 16px;
+  }
+
+  .download-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

@@ -16,7 +16,6 @@ const Html = ({ isLoggedIn }) => {
   const handleTopicClick = (id) => {
     setSelectedTopicId(id);
   };
-
   const handleNextClick = () => {
     // Get the index of the current topic
     const currentIndex = topics.findIndex((topic) => topic.id === selectedTopicId);
@@ -24,7 +23,6 @@ const Html = ({ isLoggedIn }) => {
     const nextIndex = (currentIndex + 1) % topics.length;
     setSelectedTopicId(topics[nextIndex].id);
   };
-
   const handlePreviousClick = () => {
     // Get the index of the current topic
     const currentIndex = topics.findIndex((topic) => topic.id === selectedTopicId);
@@ -32,9 +30,7 @@ const Html = ({ isLoggedIn }) => {
     const previousIndex = (currentIndex - 1 + topics.length) % topics.length;
     setSelectedTopicId(topics[previousIndex].id);
   };
-
   const selectedTopic = topics.find((topic) => topic.id === selectedTopicId);
-
   return (
     <>
       <NavBar isLoggedIn={isLoggedIn} />

@@ -82,4 +82,191 @@
   .navigation-buttons button:hover {
     background-color: #7a1da1;
   }
+  /* Media queries that maintain the exact same layout but scale down everything */
+
+/* Tablet Styles (up to 1024px) */
+@media screen and (max-width: 1024px) {
+  .cplusplus-container {
+    margin-top: 100px;
+  }
   
+  .topics-list {
+    flex: 0 0 25%; /* Keep the same proportion */
+  }
+  
+  .topic-item {
+    padding: 8px;
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  
+  .topic-content h2 {
+    font-size: 22px;
+  }
+  
+  .topic-content p {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  
+  .navigation-buttons button {
+    padding: 8px 18px;
+    font-size: 15px;
+  }
+}
+
+/* Add these rules to fix horizontal scrolling issues */
+
+/* Prevent horizontal scrolling and improve text wrapping */
+@media screen and (max-width: 768px) {
+  /* Fix for the topics list */
+  .topic-item {
+    padding: 7px;
+    font-size: 10px !important;
+    margin-bottom: 3px;
+    white-space: normal; /* Allow text to wrap */
+    word-break: break-word; /* Break long words if needed */
+    overflow-wrap: break-word; /* Alternative for word-break */
+  }
+  
+  /* Fix for the content area */
+  .topic-content {
+    padding: 15px;
+    font-size: 10px !important;
+    word-wrap: break-word; /* Ensure text wraps and doesn't cause overflow */
+  }
+  
+  .topic-content p {
+    font-size: 10px;
+    line-height: 1.3;
+    word-break: break-word; /* Break long words if needed */
+  }
+  
+  /* Ensure no horizontal overflow in container */
+  .cplusplus-container {
+    overflow-x: hidden;
+  }
+}
+
+/* Additional fixes for smaller screens */
+@media screen and (max-width: 576px) {
+  .topic-item {
+    white-space: normal;
+    word-break: break-word;
+  }
+  
+  /* Ensure code examples or long text doesn't create overflow */
+  .topic-content pre, 
+  .topic-content code {
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-width: 100%;
+  }
+}
+
+/* Mobile Styles (up to 576px) */
+@media screen and (max-width: 576px) {
+  .cplusplus-container {
+    margin-top: 70px;
+  }
+  
+  .topics-list {
+    flex: 0 0 30%; /* Slightly wider on mobile */
+    padding: 6px;
+  }
+  
+  .topic-item {
+    padding: 6px;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+  
+  .topic-content {
+    padding: 12px;
+  }
+  
+  .topic-content h2 {
+    font-size: 18px;
+  }
+  
+  .topic-content p {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+  
+  .navigation-buttons {
+    margin-top: 12px;
+  }
+  
+  .navigation-buttons button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Small Mobile Styles (up to 480px) */
+@media screen and (max-width: 480px) {
+  .cplusplus-container {
+    margin-top: 60px;
+  }
+  
+  .topics-list {
+    flex: 0 0 35%; /* Even wider on very small screens */
+    padding: 5px;
+  }
+  
+  .topic-item {
+    padding: 5px;
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+  
+  .topic-content {
+    padding: 10px;
+  }
+  
+  .topic-content h2 {
+    font-size: 16px;
+  }
+  
+  .topic-content p {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+  
+  .navigation-buttons {
+    margin-top: 10px;
+  }
+  
+  .navigation-buttons button {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+}
+
+/* Extra Small Mobile Styles (up to 380px) */
+@media screen and (max-width: 380px) {
+  .topics-list {
+    flex: 0 0 40%; /* Widest on smallest screens */
+  }
+  
+  .topic-item {
+    padding: 4px;
+    font-size: 9px;
+    margin-bottom: 1px;
+  }
+  
+  .topic-content h2 {
+    font-size: 14px;
+  }
+  
+  .topic-content p {
+    font-size: 9px;
+    line-height: 1.1;
+  }
+  
+  .navigation-buttons button {
+    padding: 4px 8px;
+    font-size: 9px;
+  }
+}

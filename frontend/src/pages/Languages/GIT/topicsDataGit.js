@@ -1,113 +1,571 @@
 export const topicsDataGit = [
-    {
-      id: 1,
-      name: 'Introduction to Git',
-      content:
-        `Git is a distributed version control system that helps track changes in source code during software development. 
-        It allows multiple developers to work on a project simultaneously by providing tools to manage and synchronize changes. 
-        Git maintains a history of changes made to files, making it easy to revert back to previous versions, compare changes, 
-        and collaborate with other team members. A key feature of Git is that it operates locally, meaning developers can work offline 
-        and commit changes to their local repositories. Once connected to the internet, changes can be pushed to a remote repository. 
-        Git supports branching, enabling developers to work on features or bug fixes in isolation without affecting the main codebase. 
-        When working with Git, understanding its version control mechanisms is crucial to maintaining an organized and efficient workflow. 
-        Git is also highly customizable, allowing users to set preferences for file tracking, merging, and commit history management. 
-        Git is widely used in open-source projects and software development teams to ensure collaboration and version control consistency. 
-        Learning Git is essential for managing large codebases and for contributing to projects effectively.`
-    },
-    {
-      id: 2,
-      name: 'Creating a Git Repository',
-      content:
-        `To start a Git project, initialize a new repository using the command \`git init\`. This creates a new .git directory in your 
-        project, enabling version control. A repository is where Git stores information about the project's files, history, and configuration. 
-        You can initialize a Git repository in any folder on your local system, allowing you to version control an existing project or start 
-        a new one from scratch. After running \`git init\`, you can begin adding files to the repository and tracking changes. 
-        For example, if you are working on a web development project, running \`git init\` in the project directory will create a Git 
-        repository for the project. You can then start adding files with \`git add\` and commit changes. 
-        It’s also possible to clone an existing remote repository with \`git clone <repository_url>\`, which creates a local copy of 
-        the repository for contributing or further development. Cloning is useful when collaborating on existing projects hosted on platforms 
-        like GitHub, GitLab, or Bitbucket.`
-    },
-    {
-      id: 3,
-      name: 'Git Status and Staging',
-      content:
-        `The \`git status\` command shows the current state of the repository, including any changes made to files and their current status. 
-        It helps developers determine which files have been modified, added, or deleted. The status output will indicate files that are 
-        "unstaged" (modified but not yet added to version control) and "untracked" (new files not yet added to the repository). 
-        To stage files for commit, use \`git add <file>\`. This prepares the changes to be saved in the commit history. 
-        You can stage specific files or all changes with \`git add .\`, which adds all modified and untracked files in the current directory. 
-        Staging changes allows you to review what will be included in the next commit, offering control over which changes are saved. 
-        Git also supports staging parts of a file using \`git add -p\`, allowing you to selectively commit changes within the same file. 
-        Understanding the staging process helps ensure that commits are intentional and only include relevant changes.`
-    },
-    {
-      id: 4,
-      name: 'Committing Changes in Git',
-      content:
-        `A commit in Git represents a snapshot of changes made to the project. After staging the changes with \`git add\`, 
-        commit them using \`git commit -m "message"\`, where the message describes the changes made. The commit message is essential for 
-        understanding the purpose of the change, and a clear, concise message is a best practice in collaborative development. 
-        Commits are stored locally in the Git repository and are identified by unique hashes, making it easy to track the history 
-        of changes in the project. It’s important to make frequent commits that logically group changes to avoid large, 
-        disorganized commits. For example, after fixing a bug, a good commit message might be \`git commit -m "Fix bug in user login"\`. 
-        You can also use \`git commit -a\` to commit all changes to tracked files in one step, without explicitly running \`git add\`. 
-        Committing regularly helps keep the development process organized and makes it easier to track progress and roll back changes. 
-        Each commit serves as a record that developers can review to understand the evolution of the codebase.`
-    },
-    {
-      id: 5,
-      name: 'Pushing Changes to Remote Repository',
-      content:
-        `After committing your changes locally, you can share them with other team members by pushing them to a remote repository. 
-        This is done using the \`git push\` command, which uploads your local commits to a remote server like GitHub, GitLab, or Bitbucket. 
-        To push changes, you typically use \`git push origin <branch_name>\`, where \`origin\` refers to the default remote repository, 
-        and \`<branch_name>\` is the branch you want to push. If you are pushing to a newly created branch, 
-        it’s essential to push the branch to the remote repository for the first time using \`git push --set-upstream origin <branch_name>\`. 
-        This step ensures that the local branch is linked to the remote branch for future pushes and pulls. Pushing your changes allows 
-        others to pull the updates and keep their local copies in sync with the latest development. It’s common practice to push 
-        changes after completing a feature or bug fix, ensuring that the entire team can work with the latest version of the project. 
-        Pushing also serves as a backup for your work, ensuring that the latest changes are stored securely on a remote server.`
-    },
-    {
-      id: 6,
-      name: 'Branching in Git',
-      content:
-        `Branching in Git allows developers to create separate lines of development, enabling them to work on different features or bug fixes 
-        independently without affecting the main codebase. To create a new branch, use \`git branch <branch_name>\`, and then switch to it using 
-        \`git checkout <branch_name>\`. This allows you to work in isolation, making changes that won’t interfere with the main project until 
-        they are ready. For example, if you are adding a new feature, you could create a branch named \`feature/login\`, and after completing 
-        the feature, merge it into the main branch. Git also supports creating and switching branches in a single command using \`git checkout -b <branch_name>\`. 
-        Branching is especially useful in collaborative environments, where multiple developers work on different aspects of the project at the same time. 
-        It’s a common practice to work on a separate branch for each feature or bug fix, and once the work is complete, merge it back into the main codebase. 
-        Branching enables parallel development and reduces conflicts between team members.`
-    },
-    {
-      id: 7,
-      name: 'Merging Branches in Git',
-      content:
-        `Merging in Git is the process of integrating changes from one branch into another. After completing work in a separate branch, 
-        you can merge it into the main branch (or any other branch) using \`git merge <branch_name>\`. This brings all the commits 
-        from the specified branch into the current branch. Before merging, it’s a good idea to first pull the latest changes from the 
-        remote repository to ensure you are working with the most up-to-date version. Merging can result in conflicts if changes 
-        were made to the same lines of code in both branches. In such cases, Git will highlight the conflicting areas and require 
-        manual intervention to resolve the conflict. After resolving any conflicts, commit the changes to complete the merge. 
-        For example, after finishing a feature in a separate branch, use \`git merge feature/login\` to bring the changes into the main branch. 
-        Merging consolidates the development work and ensures that all features and bug fixes are incorporated into the project. 
-        It’s important to regularly merge branches to keep the codebase up-to-date and prevent large conflicts from arising.`
-    }
-    ,
-    {
-      id: 8,
-      name: 'Reverting Changes in Git',
-      content:
-        `Sometimes, you may need to undo changes or revert to a previous state in your Git repository. To revert changes, you can use the 
-        \`git revert <commit_id>\` command, which creates a new commit that undoes the changes from a previous commit. This is useful 
-        for undoing specific changes that introduced issues. If you need to discard all local changes and reset the repository to its 
-        latest commit, you can use \`git reset --hard\`. Be cautious when using \`git reset\` as it removes changes irreversibly. 
-        To remove untracked files, you can use \`git clean -f\`. Understanding how to revert changes and reset your repository is crucial 
-        for managing code effectively and ensuring that you can recover from mistakes without losing important work. Reverting is a safer 
-        alternative to hard resets and is often used when working in a collaborative environment where preserving history is critical.`
-    }
-  ];
-  
+  {
+    id: 1,
+    name: 'Introduction to Git',
+    content: (
+      <>
+        <p>
+          Git is a distributed version control system that helps track changes in source code during software development. 
+          It allows multiple developers to work on a project simultaneously by providing tools to manage and synchronize changes.
+        </p>
+        
+        <h4>Key Concepts:</h4>
+        <ul>
+          <li><strong>Repository:</strong> A collection of files and their complete history</li>
+          <li><strong>Commit:</strong> A snapshot of your repository at a point in time</li>
+          <li><strong>Branch:</strong> An independent line of development</li>
+          <li><strong>Remote:</strong> A shared repository that team members use to exchange changes</li>
+        </ul>
+        
+        <h4>Basic Workflow:</h4>
+        <pre>{`1. Modify files in your working directory
+2. Stage the changes you want to commit
+3. Commit the changes to your local repository
+4. Push your changes to share with others`}</pre>
+      </>
+    )
+  },
+  {
+    id: 2,
+    name: 'Creating a Git Repository',
+    content: (
+      <>
+        <p>
+          To start using Git, you need to initialize a repository in your project directory.
+        </p>
+        
+        <h4>Initialize a New Repository:</h4>
+        <pre>{`# Create a new directory
+mkdir my-project
+cd my-project
+
+# Initialize Git repository
+git init`}</pre>
+        <p>This creates a hidden <code>.git</code> directory that stores all repository data.</p>
+        
+        <h4>Clone an Existing Repository:</h4>
+        <pre>{`git clone https://github.com/user/repo.git
+cd repo`}</pre>
+        <p>This creates a local copy of a remote repository, including all files and commit history.</p>
+      </>
+    )
+  },
+  {
+    id: 3,
+    name: 'Git Status and Staging',
+    content: (
+      <>
+        <p>
+          Understanding the status of your files is crucial before committing changes.
+        </p>
+        
+        <h4>Check Repository Status:</h4>
+        <pre>{`git status`}</pre>
+        <p>This shows:</p>
+        <ul>
+          <li>Untracked files (new files not yet added to Git)</li>
+          <li>Changes not staged for commit</li>
+          <li>Changes staged for commit</li>
+        </ul>
+        
+        <h4>Staging Changes:</h4>
+        <pre>{`# Stage a specific file
+git add filename.txt
+
+# Stage all changes in current directory
+git add .
+
+# Stage only modified files (not new files)
+git add -u
+
+# Interactive staging (choose changes)
+git add -p`}</pre>
+      </>
+    )
+  },
+  {
+    id: 4,
+    name: 'Committing Changes in Git',
+    content: (
+      <>
+        <p>
+          Commits create permanent snapshots of your project at specific points in time.
+        </p>
+        
+        <h4>Basic Commit:</h4>
+        <pre>{`git commit -m "Add user authentication feature"`}</pre>
+        
+        <h4>Good Commit Messages:</h4>
+        <ul>
+          <li>First line: Short summary (50 characters or less)</li>
+          <li>Second line: Blank</li>
+          <li>Subsequent lines: Detailed explanation if needed</li>
+        </ul>
+        
+        <h4>Example of Good Commit:</h4>
+        <pre>{`Fix login page validation
+
+- Add email format validation
+- Fix password length requirement
+- Add error message display`}</pre>
+        
+        <h4>Amend a Commit:</h4>
+        <pre>{`git commit --amend`}</pre>
+        <p>Use this to modify the most recent commit (message or content).</p>
+      </>
+    )
+  },
+  {
+    id: 5,
+    name: 'Pushing Changes to Remote Repository',
+    content: (
+      <>
+        <p>
+          Sharing your commits with others requires pushing to a remote repository.
+        </p>
+        
+        <h4>View Remotes:</h4>
+        <pre>{`git remote -v`}</pre>
+        
+        <h4>Push to Remote:</h4>
+        <pre>{`# Push to default remote (origin) and branch
+git push
+
+# Push specific branch
+git push origin branch-name
+
+# First push to new branch
+git push -u origin branch-name`}</pre>
+        
+        <h4>Push Tags:</h4>
+        <pre>{`git push --tags`}</pre>
+      </>
+    )
+  },
+  {
+    id: 6,
+    name: 'Branching in Git',
+    content: (
+      <>
+        <p>
+          Branches allow you to develop features, fix bugs, or experiment without affecting the main codebase.
+        </p>
+        
+        <h4>Branch Commands:</h4>
+        <pre>{`# List all branches
+git branch
+
+# Create new branch
+git branch feature/login
+
+# Switch to branch
+git checkout feature/login
+
+# Create and switch in one command
+git checkout -b feature/login
+
+# Delete branch
+git branch -d feature/login`}</pre>
+        
+        <h4>Branching Strategy Example:</h4>
+        <pre>{`main        - Production-ready code
+develop     - Integration branch
+feature/*   - New features
+bugfix/*    - Bug fixes
+release/*   - Release preparation`}</pre>
+      </>
+    )
+  },
+  {
+    id: 7,
+    name: 'Merging Branches in Git',
+    content: (
+      <>
+        <p>
+          Merging combines changes from different branches.
+        </p>
+        
+        <h4>Basic Merge:</h4>
+        <pre>{`# Switch to target branch
+git checkout main
+
+# Merge feature branch
+git merge feature/login`}</pre>
+        
+        <h4>Merge Conflicts:</h4>
+        <p>When conflicts occur:</p>
+        <pre>{`# After merge command shows conflicts
+# Open files and look for conflict markers:
+<<<<<<< HEAD
+Current branch code
+=======
+Incoming branch code
+>>>>>>> branch-name
+
+# Edit files to resolve conflicts
+git add resolved-file.txt
+git commit`}</pre>
+      </>
+    )
+  },
+  {
+    id: 8,
+    name: 'Reverting Changes in Git',
+    content: (
+      <>
+        <p>
+          Git provides several ways to undo changes at different stages.
+        </p>
+        
+        <h4>Undo Unstaged Changes:</h4>
+        <pre>{`# Discard changes to specific file
+git checkout -- filename.txt
+
+# Discard all unstaged changes
+git checkout -- .`}</pre>
+        
+        <h4>Undo Staged Changes:</h4>
+        <pre>{`# Unstage file (keep changes)
+git reset HEAD filename.txt`}</pre>
+        
+        <h4>Revert a Commit:</h4>
+        <pre>{`# Create new commit that undoes changes
+git revert commit-hash`}</pre>
+        
+        <h4>Reset to Previous Commit:</h4>
+        <pre>{`# Move branch pointer (keep changes)
+git reset --soft commit-hash
+
+# Move pointer and reset staging (keep working dir)
+git reset --mixed commit-hash
+
+# Completely reset to commit (dangerous)
+git reset --hard commit-hash`}</pre>
+      </>
+    )
+  },
+  {
+    id: 9,
+    name: 'Git Log and History',
+    content: (
+      <>
+        <p>
+          Viewing commit history helps understand project evolution and find specific changes.
+        </p>
+        
+        <h4>Basic Log Commands:</h4>
+        <pre>{`# Show commit history
+git log
+
+# One-line per commit
+git log --oneline
+
+# Show changes
+git log -p
+
+# Filter by author
+git log --author="name"
+
+# Filter by date
+git log --since="1 week ago"`}</pre>
+        
+        <h4>Pretty Format:</h4>
+        <pre>{`git log --pretty=format:"%h - %an, %ar : %s"`}</pre>
+      </>
+    )
+  },
+  {
+    id: 10,
+    name: 'Git Stash',
+    content: (
+      <>
+        <p>
+          Stash lets you temporarily shelve changes so you can work on something else.
+        </p>
+        
+        <h4>Basic Stash Commands:</h4>
+        <pre>{`# Stash current changes
+git stash
+
+# Stash with message
+git stash save "work in progress"
+
+# List stashes
+git stash list
+
+# Apply last stash
+git stash apply
+
+# Apply specific stash
+git stash apply stash@{1}
+
+# Create branch from stash
+git stash branch new-branch`}</pre>
+      </>
+    )
+  },
+  {
+    id: 11,
+    name: 'Git Tags',
+    content: (
+      <>
+        <p>
+          Tags mark specific points in history as important (typically releases).
+        </p>
+        
+        <h4>Tag Commands:</h4>
+        <pre>{`# List tags
+git tag
+
+# Create lightweight tag
+git tag v1.0.1
+
+# Create annotated tag
+git tag -a v1.0.0 -m "Release version 1.0.0"
+
+# Show tag details
+git show v1.0.0
+
+# Push tags to remote
+git push origin --tags`}</pre>
+      </>
+    )
+  },
+  {
+    id: 12,
+    name: 'Git Fetch and Pull',
+    content: (
+      <>
+        <p>
+          These commands help synchronize your local repository with remote changes.
+        </p>
+        
+        <h4>Fetch vs Pull:</h4>
+        <pre>{`# Download changes but don't merge
+git fetch origin
+
+# Download and merge changes
+git pull origin main
+
+# Pull with rebase instead of merge
+git pull --rebase origin main`}</pre>
+      </>
+    )
+  },
+  {
+    id: 13,
+    name: 'Git Rebase',
+    content: (
+      <>
+        <p>
+          Rebasing rewrites commit history by applying commits on top of another branch.
+        </p>
+        
+        <h4>Basic Rebase:</h4>
+        <pre>{`# Switch to feature branch
+git checkout feature
+
+# Rebase onto main
+git rebase main`}</pre>
+        
+        <h4>Interactive Rebase:</h4>
+        <pre>{`# Rebase last 3 commits
+git rebase -i HEAD~3`}</pre>
+        <p>This opens an editor where you can:</p>
+        <ul>
+          <li>pick - use commit</li>
+          <li>reword - edit commit message</li>
+          <li>edit - amend commit</li>
+          <li>squash - combine with previous commit</li>
+          <li>drop - remove commit</li>
+        </ul>
+      </>
+    )
+  },
+  {
+    id: 14,
+    name: 'Git Workflows',
+    content: (
+      <>
+        <p>
+          Common workflows help teams collaborate effectively using Git.
+        </p>
+        
+        <h4>Centralized Workflow:</h4>
+        <p>Single central repository, developers push/pull directly to main branch.</p>
+        
+        <h4>Feature Branch Workflow:</h4>
+        <p>All development happens in dedicated branches, merged via pull requests.</p>
+        
+        <h4>Gitflow Workflow:</h4>
+        <pre>{`main        - Production releases
+develop     - Integration branch
+feature/*   - New features
+release/*   - Prepare releases
+hotfix/*    - Critical bug fixes`}</pre>
+        
+        <h4>Forking Workflow:</h4>
+        <p>Each developer has their own server-side repository, changes shared via pull requests.</p>
+      </>
+    )
+  },
+  {
+    id: 15,
+    name: 'Git Hooks',
+    content: (
+      <>
+        <p>
+          Hooks are scripts that run automatically when certain Git events occur.
+        </p>
+        
+        <h4>Common Hook Locations:</h4>
+        <pre>{`.git/hooks/
+  pre-commit
+  commit-msg
+  pre-push
+  post-receive`}</pre>
+        
+        <h4>Example Pre-commit Hook:</h4>
+        <pre>{`#!/bin/sh
+# Run tests before allowing commit
+npm test`}</pre>
+      </>
+    )
+  },
+  {
+    id: 16,
+    name: 'Git Submodules',
+    content: (
+      <>
+        <p>
+          Submodules let you include other Git repositories within your project.
+        </p>
+        
+        <h4>Submodule Commands:</h4>
+        <pre>{`# Add submodule
+git submodule add https://github.com/user/repo.git lib/repo
+
+# Clone project with submodules
+git clone --recursive https://github.com/user/project.git
+
+# Update submodules
+git submodule update --init --recursive`}</pre>
+      </>
+    )
+  },
+  {
+    id: 17,
+    name: 'Git Bisect',
+    content: (
+      <>
+        <p>
+          Bisect helps find which commit introduced a bug using binary search.
+        </p>
+        
+        <h4>Using Bisect:</h4>
+        <pre>{`# Start bisect session
+git bisect start
+
+# Mark current commit as bad
+git bisect bad
+
+# Mark known good commit
+git bisect good v1.0.0
+
+# Test current commit, then mark
+git bisect good  # or git bisect bad
+
+# Reset when done
+git bisect reset`}</pre>
+      </>
+    )
+  },
+  {
+    id: 18,
+    name: 'Git Aliases',
+    content: (
+      <>
+        <p>
+          Aliases create shortcuts for frequently used Git commands.
+        </p>
+        
+        <h4>Creating Aliases:</h4>
+        <pre>{`# Short log
+git config --global alias.lg "log --oneline --graph --decorate"
+
+# Status shortcut
+git config --global alias.st status
+
+# Complex alias
+git config --global alias.ll "log --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr)%Creset %C(blue)<%an>%Creset'"`}</pre>
+      </>
+    )
+  },
+  {
+    id: 19,
+    name: 'Git Large File Storage (LFS)',
+    content: (
+      <>
+        <p>
+          Git LFS handles large files by storing references in Git and contents separately.
+        </p>
+        
+        <h4>Using Git LFS:</h4>
+        <pre>{`# Install Git LFS
+git lfs install
+
+# Track large files
+git lfs track "*.psd"
+git lfs track "assets/**"
+
+# View tracked patterns
+git lfs track`}</pre>
+      </>
+    )
+  },
+  {
+    id: 20,
+    name: 'Git Best Practices',
+    content: (
+      <>
+        <p>
+          Following best practices makes working with Git more effective.
+        </p>
+        
+        <h4>Key Practices:</h4>
+        <ul>
+          <li>Commit often, in logical chunks</li>
+          <li>Write clear, descriptive commit messages</li>
+          <li>Use branches for features/bugfixes</li>
+          <li>Pull before you push</li>
+          <li>Review changes before staging</li>
+          <li>Use .gitignore for files not to track</li>
+          <li>Keep your repository clean</li>
+          <li>Agree on a workflow with your team</li>
+        </ul>
+        
+        <h4>Sample .gitignore:</h4>
+        <pre>{`# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+node_modules/
+*.gem
+
+# Logs and databases
+*.log
+*.sqlite
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*`}</pre>
+      </>
+    )
+  }
+];

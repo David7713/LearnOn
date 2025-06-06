@@ -6,8 +6,6 @@ dotenv.config();
 const authRoutes = require("./routes/authRoutes");
 const aiRoutes = require("./routes/aiRoutes");
 const { connectDB, db } = require("./config/db");
-
-
 const certificationRoutes = require("./routes/certificationRoutes");
 
 // Load environment variables
@@ -33,6 +31,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/ai", aiRoutes);
 app.use("/api", certificationRoutes); // This will make the endpoint "/api/certifications"
 
+// User route - Add this new line to map /api/user to the auth routes
+app.use("/api", authRoutes); // This will allow /api/user to work
 
 // Debug route to test API
 app.get('/api/test', (req, res) => {

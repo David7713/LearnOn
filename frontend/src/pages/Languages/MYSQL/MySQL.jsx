@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { topicsDataMysql } from './topicsDataMysql'; // Import MySQL topics data
+import { topicsDataMysql } from '../MYSQL/topicsDataMysql'
 import './MySQL.css'; // Import CSS for styling
 import NavBar from '../../../components/NavBar/NavBar'; // Assuming you want the same Navbar
 import Footer from '../../../components/Footer/Footer';

@@ -23,13 +23,13 @@ const About = ({ isLoggedIn }) => {
     }, 5); // Speed of student counter
 
     const intervalCourses = setInterval(() => {
-      if (courseCount < 50) {
+      if (courseCount < 13) {
         courseCount++;
         setCourses(courseCount);
       } else {
         clearInterval(intervalCourses);
       }
-    }, 30); // Speed of course counter
+    }, 100); // Speed of course counter
 
     const intervalExperience = setInterval(() => {
       if (experienceCount < 5) {

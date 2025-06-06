@@ -1,3 +1,4 @@
+// middleware/authenticate.js
 const jwt = require('jsonwebtoken');
 
 const authenticate = (req, res, next) => {
@@ -17,7 +18,6 @@ const authenticate = (req, res, next) => {
     
     req.user = decoded;
     next();
-    console.log('Decoded token:', decoded);
 
   } catch (error) {
     console.error('Auth middleware error:', error);

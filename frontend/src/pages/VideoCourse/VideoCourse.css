@@ -60,4 +60,73 @@
   .watch-button:hover {
     background-color: #7a1da1;
   }
-  
+  /* Tablet screens */
+@media (max-width: 1024px) {
+  .video-course-container h1 {
+    font-size: 32px;
+  }
+
+  .video-course-container p {
+    font-size: 16px;
+  }
+
+  .video-card h2 {
+    font-size: 20px;
+  }
+
+  .video-card iframe {
+    height: 280px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .video-course-container {
+    padding: 15px;
+    margin-top: 100px;
+  }
+
+  .video-course-container h1 {
+    font-size: 28px;
+  }
+
+  .video-course-container p {
+    font-size: 15px;
+  }
+
+  .videos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-card h2 {
+    font-size: 18px;
+  }
+
+  .video-card iframe {
+    height: 250px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .video-course-container {
+    padding: 10px;
+    margin-top: 80px;
+  }
+
+  .video-course-container h1 {
+    font-size: 24px;
+  }
+
+  .video-course-container p {
+    font-size: 14px;
+  }
+
+  .video-card h2 {
+    font-size: 16px;
+  }
+
+  .video-card iframe {
+    height: 220px;
+  }
+}

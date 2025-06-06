@@ -3,8 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import './Certification.css';
+import NavBar from '../../components/NavBar/NavBar';
+import Carousel from '../../components/Carousel/Carousel';
+import Footer from '../../components/Footer/Footer';
+import frontendImage from '../Certification/certfication assets/frontendCertification.png'
+import backendImage from '../Certification/certfication assets/backendCertification.png'
 
-const Certification = () => {
+const Certification = ({isLoggedIn}) => {
   const [certifications, setCertifications] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -206,16 +211,30 @@ const Certification = () => {
     }
 
     return (
+
+ 
       <div className="certification-list">
-        <h3>Your Certifications:</h3>
-        {certifications.map(cert => (
-          <div key={cert.id} className="certification-card">
-            <h4>{cert.course_type === 'frontend' ? 'Frontend Development' : 'Backend Development'}</h4>
-            <p>Issued on: {new Date(cert.certification_date).toLocaleDateString()}</p>
-            <button className="download-btn" onClick={() => downloadCertificate(cert)}>Download PDF</button>
-          </div>
-        ))}
-      </div>
+            <NavBar isLoggedIn={isLoggedIn} />
+             <Carousel></Carousel>
+      <h3>Your Certifications:</h3>
+   <div className='my-certification-container'>
+   {certifications.map(cert => (
+        <div key={cert.id} className="certification-card">
+          <img
+            src={cert.course_type === 'frontend' ? frontendImage : backendImage}
+            alt={`${cert.course_type} certification`}
+            className="certification-image"
+          />
+          <h4>{cert.course_type === 'frontend' ? 'Frontend Development' : 'Backend Development'}</h4>
+          <p>Issued on: {new Date(cert.certification_date).toLocaleDateString()}</p>
+          <button className="download-btn" onClick={() => downloadCertificate(cert)}>
+            Download PDF
+          </button>
+        </div>
+      ))}
+   </div>
+
+    </div>
     );
   };
 
@@ -245,11 +264,12 @@ const Certification = () => {
         )}
 
         {hasCertification('frontend') && hasCertification('backend') && (
-          <p>You have completed all available certifications. Congratulations!</p>
+          <p className='certification-options-complated'>You have completed all available certifications. Congratulations!</p>
         )}
       </div>
     );
   };
+  
 
   return (
     <div className="certification-container">
@@ -258,7 +278,9 @@ const Certification = () => {
       {error && <p className="error-message">{error}</p>}
       {!loading && certifications !== null && renderCertificationInfo()}
       {!loading && renderCertificationOptions()}
+      <Footer></Footer>
     </div>
+    
   );
 };
 

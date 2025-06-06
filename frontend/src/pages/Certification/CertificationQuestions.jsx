@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import certificationQuestions from '../../pages/Certification/questions.json';
+import './CertificationQuestions.css';
+import NavBar from '../../components/NavBar/NavBar';
+import Carousel from '../../components/Carousel/Carousel';
+import Footer from '../../components/Footer/Footer';
 
-const CertificationQuestions = () => {
+const CertificationQuestions = ({isLoggedIn}) => {
   const { type: course } = useParams();
   const navigate = useNavigate();
 
@@ -104,56 +108,61 @@ const CertificationQuestions = () => {
       submitCertification(course);
     } else {
       alert(`Unfortunately, you did not pass. You scored ${percentage.toFixed(2)}%. Try again!`);
-      navigate('/certification'); // Go back to certifications page
+      navigate('/certification'); 
     }
 
     setAnswered(true);
   };
 
   if (!course || !certificationQuestions[course]) {
-    return <p>Invalid course selected.</p>;
+    return <p className="invalid-course">Invalid course selected.</p>;
   }
 
   return (
-    <div>
-      <h1>{course.charAt(0).toUpperCase() + course.slice(1)} Certification Exam</h1>
-      <p>Time Remaining: {formatTime(timer)}</p>
+    <div className="certification-questions-container">
+      <NavBar isLoggedIn={isLoggedIn} />
+      <Carousel></Carousel>
+      <h1 className="certification-title">
+        {course.charAt(0).toUpperCase() + course.slice(1)} Certification Exam
+      </h1>
+      <div className="timer-container">
+        <p className="timer">Time Remaining: <span className="time">{formatTime(timer)}</span></p>
+      </div>
 
-      {questions.map((q) => (
-        <div key={q.id} style={{ marginBottom: '20px' }}>
-          <h3>{q.question}</h3>
-          {q.options.map((option, index) => (
-            <div key={index}>
-              <input
-                type="radio"
-                id={`${q.id}-${index}`}
-                name={`question-${q.id}`}
-                value={option}
-                disabled={answered || isSubmitting}
-                onClick={() => handleAnswer(q.id, option)}
-              />
-              <label htmlFor={`${q.id}-${index}`}>{option}</label>
+      <div className="questions-list">
+        {questions.map((q) => (
+          <div key={q.id} className="question-card">
+            <h3 className="question-text">{q.question}</h3>
+            <div className="options-container">
+              {q.options.map((option, index) => (
+                <div key={index} className="option">
+                  <input
+                    type="radio"
+                    id={`${q.id}-${index}`}
+                    name={`question-${q.id}`}
+                    value={option}
+                    disabled={answered || isSubmitting}
+                    onClick={() => handleAnswer(q.id, option)}
+                    className="option-input"
+                  />
+                  <label htmlFor={`${q.id}-${index}`} className="option-label">{option}</label>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      ))}
+          </div>
+        ))}
+      </div>
 
       {!answered && (
-        <button 
-          onClick={submitAnswers} 
-          disabled={isSubmitting}
-          style={{ 
-            padding: '10px 20px', 
-            fontSize: '16px', 
-            backgroundColor: isSubmitting ? '#ccc' : '#4CAF50',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: isSubmitting ? 'not-allowed' : 'pointer'
-          }}
-        >
-          {isSubmitting ? 'Submitting...' : 'Submit Answers'}
-        </button>
+        <div className="submit-container">
+          <button 
+            onClick={submitAnswers} 
+            disabled={isSubmitting}
+            className={`submit-button ${isSubmitting ? 'submitting' : ''}`}
+          >
+            {isSubmitting ? 'Submitting...' : 'Submit Answers'}
+          </button>
+        </div>
       )}
     </div>
   );

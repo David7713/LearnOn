@@ -7,16 +7,7 @@ import { SiGooglegemini } from "react-icons/si";
 const Footer = () => {
   return (
     <div className="footer-part">
-      <div className="footer-headline-part">
-        <div>Learn <label id="on"> On</label></div>
-        <ul>
-          <li>Quiz</li>
-          <li>Downloads</li>
-          <li>Certification</li>
-          <li>AI <SiGooglegemini /></li>
-          <li>Video Course</li>
-        </ul>
-      </div>
+  
 
       <div className="footer-subheader-part">
         <div className="footer-languages-learn-part">

@@ -17,6 +17,138 @@
       "question": "Which property is used to change the background color in CSS?",
       "options": ["color", "background-color", "bgcolor", "background"],
       "answer": "background-color"
+    },
+    {
+      "id": 4,
+      "question": "Which of the following is not a JavaScript framework or library?",
+      "options": ["React", "Angular", "Vue", "Pythonic"],
+      "answer": "Pythonic"
+    },
+    {
+      "id": 5,
+      "question": "What does the 'z-index' property in CSS control?",
+      "options": ["Element width", "Element position", "Stacking order", "Text alignment"],
+      "answer": "Stacking order"
+    },
+    {
+      "id": 6,
+      "question": "Which HTML5 element represents the main content of a document?",
+      "options": ["<section>", "<article>", "<main>", "<content>"],
+      "answer": "<main>"
+    },
+    {
+      "id": 7,
+      "question": "What is the correct way to comment in JavaScript?",
+      "options": ["<!-- Comment -->", "/* Comment */", "// Comment", "# Comment"],
+      "answer": "// Comment"
+    },
+    {
+      "id": 8,
+      "question": "Which CSS property is used to create space between elements?",
+      "options": ["spacing", "margin", "padding", "border"],
+      "answer": "margin"
+    },
+    {
+      "id": 9,
+      "question": "In React, what hook is used to perform side effects in function components?",
+      "options": ["useState", "useEffect", "useContext", "useReducer"],
+      "answer": "useEffect"
+    },
+    {
+      "id": 10,
+      "question": "What is the box model in CSS?",
+      "options": ["A 3D rendering technique", "A layout system for organizing elements", "A design pattern for UI components", "A container for HTML elements defining spacing properties"],
+      "answer": "A container for HTML elements defining spacing properties"
+    },
+    {
+      "id": 11,
+      "question": "Which attribute is used to define inline styles in HTML?",
+      "options": ["class", "style", "css", "format"],
+      "answer": "style"
+    },
+    {
+      "id": 12,
+      "question": "What is the purpose of the 'localStorage' object in JavaScript?",
+      "options": ["To store data temporarily in memory", "To store data permanently in the browser", "To store data on a remote server", "To cache server responses"],
+      "answer": "To store data permanently in the browser"
+    },
+    {
+      "id": 13,
+      "question": "Which CSS display property makes an element invisible but still takes up space?",
+      "options": ["display: none", "visibility: hidden", "opacity: 0", "transparent: true"],
+      "answer": "visibility: hidden"
+    },
+    {
+      "id": 14,
+      "question": "What does AJAX stand for?",
+      "options": ["Asynchronous JavaScript and XML", "Advanced JavaScript and XHTML", "Automated JavaScript and XML", "Asynchronous JavaScript and XSLT"],
+      "answer": "Asynchronous JavaScript and XML"
+    },
+    {
+      "id": 15,
+      "question": "Which HTML element is used to create a dropdown list?",
+      "options": ["<input type='dropdown'>", "<list>", "<select>", "<dropdown>"],
+      "answer": "<select>"
+    },
+    {
+      "id": 16,
+      "question": "What is the purpose of the 'defer' attribute in a script tag?",
+      "options": ["Delays script execution until the page is loaded", "Prevents the script from loading", "Downloads the script asynchronously", "Makes the script optional"],
+      "answer": "Delays script execution until the page is loaded"
+    },
+    {
+      "id": 17,
+      "question": "What is a CSS preprocessor?",
+      "options": ["A tool that converts CSS to HTML", "A tool that optimizes CSS for performance", "A scripting language that extends CSS", "A GUI for designing CSS"],
+      "answer": "A scripting language that extends CSS"
+    },
+    {
+      "id": 18,
+      "question": "Which CSS property is used to make text bold?",
+      "options": ["text-weight", "font-weight", "bold", "text-style"],
+      "answer": "font-weight"
+    },
+    {
+      "id": 19,
+      "question": "What is the purpose of media queries in CSS?",
+      "options": ["To filter content for print output", "To create responsive designs", "To query the browser for supported features", "To import media files"],
+      "answer": "To create responsive designs"
+    },
+    {
+      "id": 20,
+      "question": "What is the difference between '==' and '===' operators in JavaScript?",
+      "options": ["No difference", "'==' compares values, '===' compares values and types", "'===' is faster than '=='", "'==' is a deprecated syntax"],
+      "answer": "'==' compares values, '===' compares values and types"
+    },
+    {
+      "id": 21,
+      "question": "Which method is used to add an element at the end of an array in JavaScript?",
+      "options": ["push()", "append()", "add()", "insert()"],
+      "answer": "push()"
+    },
+    {
+      "id": 22,
+      "question": "What is a Promise in JavaScript?",
+      "options": ["A guarantee of future payment", "An object representing eventual completion of an asynchronous operation", "A type of variable", "A function that runs automatically"],
+      "answer": "An object representing eventual completion of an asynchronous operation"
+    },
+    {
+      "id": 23,
+      "question": "Which CSS property is used to create rounded corners?",
+      "options": ["corner-radius", "border-radius", "round-corner", "border-style"],
+      "answer": "border-radius"
+    },
+    {
+      "id": 24,
+      "question": "What is the purpose of a Virtual DOM in React?",
+      "options": ["To create 3D interfaces", "To improve performance by minimizing direct DOM manipulation", "To provide virtual hosting for components", "To create browser-independent code"],
+      "answer": "To improve performance by minimizing direct DOM manipulation"
+    },
+    {
+      "id": 25,
+      "question": "Which event occurs when a user clicks on an HTML element?",
+      "options": ["onmouseclick", "onclick", "onpress", "clickevent"],
+      "answer": "onclick"
     }
   ],
   "backend": [
@@ -31,12 +163,143 @@
       "question": "What does SQL stand for?",
       "options": ["Structured Query Language", "Simple Query Language", "Stylish Question Language", "Statement Question Language"],
       "answer": "Structured Query Language"
-    },
-    {
+    },{
       "id": 3,
       "question": "Which of the following is a NoSQL database?",
       "options": ["MySQL", "PostgreSQL", "MongoDB", "Oracle"],
       "answer": "MongoDB"
+    },
+    {
+      "id": 4,
+      "question": "What is middleware in web development?",
+      "options": ["A type of database server", "Software that acts as a bridge between different applications", "A hardware component", "A frontend design pattern"],
+      "answer": "Software that acts as a bridge between different applications"
+    },
+    {
+      "id": 5,
+      "question": "Which HTTP status code indicates a successful request?",
+      "options": ["200", "404", "500", "302"],
+      "answer": "200"
+    },
+    {
+      "id": 6,
+      "question": "What is an API?",
+      "options": ["Application Programming Interface", "Automated Programming Interface", "Application Process Integration", "Advanced Programming Iteration"],
+      "answer": "Application Programming Interface"
+    },
+    {
+      "id": 7,
+      "question": "Which pattern is commonly used for handling asynchronous operations in Node.js?",
+      "options": ["Observer Pattern", "Decorator Pattern", "Callback Pattern", "Factory Pattern"],
+      "answer": "Callback Pattern"
+    },
+    {
+      "id": 8,
+      "question": "What is a JOIN in SQL?",
+      "options": ["A method to combine rows from different tables", "A way to split a table into multiple tables", "A constraint to enforce data integrity", "A technique to optimize query performance"],
+      "answer": "A method to combine rows from different tables"
+    },
+    {
+      "id": 9,
+      "question": "What does ORM stand for in backend development?",
+      "options": ["Object Relational Mapping", "Operational Resource Management", "Object Resource Model", "Optimized Relational Model"],
+      "answer": "Object Relational Mapping"
+    },
+    {
+      "id": 10,
+      "question": "Which of the following is not a backend programming language?",
+      "options": ["Python", "Ruby", "CSS", "Java"],
+      "answer": "CSS"
+    },
+    {
+      "id": 11,
+      "question": "What is a primary key in a database?",
+      "options": ["The first column in a table", "A unique identifier for each record", "The fastest way to access data", "A password for database access"],
+      "answer": "A unique identifier for each record"
+    },
+    {
+      "id": 12,
+      "question": "Which protocol is used for secure data transfer over the web?",
+      "options": ["HTTP", "FTP", "HTTPS", "SMTP"],
+      "answer": "HTTPS"
+    },
+    {
+      "id": 13,
+      "question": "What is the purpose of a database index?",
+      "options": ["To organize data alphabetically", "To improve the speed of data retrieval operations", "To encrypt sensitive data", "To create backups of data"],
+      "answer": "To improve the speed of data retrieval operations"
+    },
+    {
+      "id": 14,
+      "question": "What does CRUD stand for?",
+      "options": ["Create, Read, Update, Delete", "Compile, Run, Update, Debug", "Configure, Route, Uninstall, Deploy", "Create, Route, Update, Destroy"],
+      "answer": "Create, Read, Update, Delete"
+    },
+    {
+      "id": 15,
+      "question": "What is the purpose of a load balancer?",
+      "options": ["To increase server capacity", "To distribute traffic across multiple servers", "To block malicious traffic", "To optimize database queries"],
+      "answer": "To distribute traffic across multiple servers"
+    },
+    {
+      "id": 16,
+      "question": "Which HTTP method is idempotent?",
+      "options": ["POST", "PUT", "PATCH", "None of the above"],
+      "answer": "PUT"
+    },
+    {
+      "id": 17,
+      "question": "What is a transaction in database management?",
+      "options": ["A financial operation", "A payment for database usage", "A sequence of operations performed as a single logical unit", "A query that retrieves data"],
+      "answer": "A sequence of operations performed as a single logical unit"
+    },
+    {
+      "id": 18,
+      "question": "Which of the following is a serverless computing service?",
+      "options": ["AWS EC2", "AWS Lambda", "Docker", "Apache Tomcat"],
+      "answer": "AWS Lambda"
+    },
+    {
+      "id": 19,
+      "question": "What is the purpose of Docker in backend development?",
+      "options": ["To create database diagrams", "To write efficient SQL queries", "To containerize applications", "To monitor server performance"],
+      "answer": "To containerize applications"
+    },
+    {
+      "id": 20,
+      "question": "What is a RESTful API?",
+      "options": ["An API that can only be used for web applications", "An API that uses HTTP requests to GET, PUT, POST and DELETE data", "An API that requires authentication", "An API for database management"],
+      "answer": "An API that uses HTTP requests to GET, PUT, POST and DELETE data"
+    },
+    {
+      "id": 21,
+      "question": "What is the purpose of JWT (JSON Web Tokens)?",
+      "options": ["To format JSON data", "To secure API endpoints", "To optimize JSON processing", "To convert JSON to XML"],
+      "answer": "To secure API endpoints"
+    },
+    {
+      "id": 22,
+      "question": "Which database type would be best for handling hierarchical data?",
+      "options": ["Relational database", "Graph database", "Time-series database", "Key-value store"],
+      "answer": "Graph database"
+    },
+    {
+      "id": 23,
+      "question": "What is caching in backend development?",
+      "options": ["Storing frequently accessed data in memory for faster retrieval", "Converting code to machine language", "Creating backup copies of data", "Encrypting sensitive data"],
+      "answer": "Storing frequently accessed data in memory for faster retrieval"
+    },
+    {
+      "id": 24,
+      "question": "Which concept in backend development helps to handle unexpected errors?",
+      "options": ["Data validation", "Load balancing", "Exception handling", "Optimization"],
+      "answer": "Exception handling"
+    },
+    {
+      "id": 25,
+      "question": "What is the purpose of environment variables in backend development?",
+      "options": ["To monitor environmental impact of servers", "To set up different configuration values for different environments", "To control server room temperature", "To store all application data"],
+      "answer": "To set up different configuration values for different environments"
     }
   ]
 }

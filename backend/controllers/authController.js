@@ -62,3 +62,29 @@ exports.login = (req, res) => {
     });
   });
 };
+
+// New function to get current user data
+exports.getCurrentUser = (req, res) => {
+  // The authenticate middleware has already verified the token
+  // and attached the user id to req.user.id
+  
+  db.query("SELECT id, username, email, user_type FROM users WHERE id = ?", [req.user.id], (err, results) => {
+    if (err) {
+      console.error("Error fetching user:", err);
+      return res.status(500).json({ message: "Server error" });
+    }
+
+    if (results.length === 0) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const user = results[0];
+    
+    res.json({
+      id: user.id,
+      username: user.username,
+      email: user.email,
+      userType: user.user_type
+    });
+  });
+};

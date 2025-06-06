@@ -2,161 +2,319 @@ export const topics = [
   {
     id: 1,
     name: 'CSS Home',
-    content: 
-      `CSS, or Cascading Style Sheets, is a stylesheet language used to define the visual appearance of a webpage. 
-      By separating structure (HTML) from design (CSS), it makes web development more efficient and maintainable. 
-      CSS allows you to apply consistent styles across multiple pages by defining rules for colors, fonts, layouts, 
-      and responsiveness. It also helps in controlling the positioning of elements, adjusting their size, and creating 
-      interactive effects. A simple CSS rule might look like this: 
-      \`h1 { color: blue; }\`. This rule selects all <h1> elements and changes their color to blue. 
-      Modern CSS also includes advanced features like Flexbox, Grid, and animations. These allow for highly dynamic layouts 
-      that adapt to screen size changes, making websites responsive. With the rise of responsive design, CSS became crucial for 
-      ensuring that webpages look great on any device. From mobile phones to desktops, CSS helps achieve layouts that adjust fluidly. 
-      Understanding CSS is essential for any web developer, as it is the foundation for creating visually attractive and accessible websites.`
+    content: (
+      <>
+        <h3>Welcome to CSS</h3>
+        <p>CSS (Cascading Style Sheets) describes how HTML elements are to be displayed on screen, paper, or in other media.</p>
+        <p>It allows you to control layout, colors, fonts, spacing, and more!</p>
+        <p>Example:</p>
+        <code>
+          body &#123; <br />
+          &nbsp;&nbsp;background-color: lightblue; <br />
+          &#125;
+        </code>
+      </>
+    )
   },
   {
     id: 2,
     name: 'CSS Introduction',
-    content: 
-      `CSS was developed by Håkon Wium Lie and Bert Bos in 1994 and quickly became the standard way to style webpages. 
-      Prior to CSS, all webpage styling was handled through HTML attributes like <font> and <center>, which were 
-      inefficient and lacked flexibility. With CSS, developers can now control the layout, typography, colors, and much more, 
-      separating structure from style. A fundamental CSS rule might look like this: 
-      \`.container { margin: 0 auto; width: 80%; }\`, which centers a container element on the page and gives it a width of 80%. 
-      Over the years, CSS has evolved with the introduction of new techniques like Flexbox, CSS Grid, and CSS Variables. 
-      These features allow developers to create more complex and dynamic designs without relying on extra libraries or JavaScript. 
-      One of the key benefits of CSS is its ability to apply styles globally. By linking a CSS file to an HTML document, 
-      developers can style an entire website consistently, which is critical for scalability. CSS is also crucial for 
-      building mobile-responsive websites. Through techniques like media queries, CSS adapts the layout to different screen sizes. 
-      Understanding CSS's history and capabilities is essential for modern web development.`
+    content: (
+      <>
+        <h3>What is CSS?</h3>
+        <ul>
+          <li>CSS stands for Cascading Style Sheets</li>
+          <li>CSS describes how HTML elements are to be displayed</li>
+          <li>CSS saves a lot of work — it can control the layout of multiple web pages all at once</li>
+        </ul>
+        <p>Example:</p>
+        <code>
+          h1 &#123; color: navy; font-size: 2em; &#125;
+        </code>
+      </>
+    )
   },
   {
     id: 3,
-    name: 'CSS Selectors',
-    content: 
-      `CSS selectors are used to target specific elements on a webpage for styling. A simple selector might target an HTML 
-      element, such as a paragraph (\`p\`), or a class (\`.container\`) or an ID (\`#header\`). More complex selectors include 
-      pseudo-classes and pseudo-elements. Pseudo-classes like \`:hover\` apply styles when a user interacts with an element, 
-      such as when a user hovers over a link. Example: 
-      \`a:hover { color: red; }\` changes the color of links to red when hovered over. Pseudo-elements like \`::before\` and 
-      \`::after\` allow you to add content before or after an element's content. For instance, 
-      \`p::after { content: " (read more)"; }\` would append the text "(read more)" to every paragraph. 
-      More advanced selectors include descendant selectors (e.g., \`div p\`), which target <p> elements inside <div> tags, 
-      and attribute selectors (e.g., \`input[type="text"]\`) which target <input> elements with specific attributes. 
-      CSS selectors provide flexibility and precision when styling, ensuring that only the intended elements are affected.`
+    name: 'CSS Syntax',
+    content: (
+      <>
+        <h3>CSS Syntax</h3>
+        <p>A CSS rule consists of a selector and a declaration block:</p>
+        <code>
+          selector &#123; property: value; &#125;
+        </code>
+        <p>Example:</p>
+        <code>
+          p &#123; color: red; font-size: 16px; &#125;
+        </code>
+      </>
+    )
   },
   {
     id: 4,
-    name: 'CSS Box Model',
-    content: 
-      `The CSS box model is a fundamental concept for understanding layout and element dimensions. It consists of four parts: 
-      content, padding, border, and margin. The content area is where the text or image is displayed. Padding adds space around the 
-      content, while the border surrounds the padding, and the margin creates space between the element and surrounding elements. 
-      The total width and height of an element are calculated by adding the width of the content, padding, border, and margin. 
-      For example, if an element has a width of 100px, padding of 10px, a 5px border, and a margin of 20px, the total width 
-      of the element will be 100px + 10px + 10px (padding on both sides) + 5px + 5px (border on both sides) + 20px + 20px 
-      (margin on both sides), totaling 180px. The box model is essential for precise control over element layout. 
-      Understanding the box model is especially useful when designing complex layouts or working with responsive designs. 
-      In Flexbox and Grid layouts, the box model plays a crucial role in determining how elements are spaced and aligned.`
+    name: 'CSS Selectors',
+    content: (
+      <>
+        <h3>CSS Selectors</h3>
+        <p>Selectors are used to "find" (or select) the HTML elements you want to style.</p>
+        <ul>
+          <li><code>element</code>: <code>p</code>, <code>h1</code></li>
+          <li><code>class</code>: <code>.menu</code></li>
+          <li><code>id</code>: <code>#header</code></li>
+          <li><code>*</code>: selects all elements</li>
+        </ul>
+      </>
+    )
   },
   {
     id: 5,
-    name: 'CSS Flexbox',
-    content: 
-      `Flexbox is a CSS layout module designed to arrange elements in a one-dimensional row or column. It simplifies the process of 
-      creating complex layouts by offering more control over alignment, spacing, and distribution of items. The flex container is 
-      defined using \`display: flex;\`, and its children (flex items) are arranged based on properties like \`justify-content\`, 
-      \`align-items\`, and \`flex-direction\`. \`justify-content\` controls horizontal alignment (e.g., \`center\` or \`space-between\`), 
-      while \`align-items\` controls vertical alignment (e.g., \`flex-start\`, \`center\`). The \`flex-direction\` property 
-      determines the direction of the items—either row (default) or column. Example:
-      \`.container { display: flex; justify-content: space-between; }\` places items within a container with equal spacing. 
-      Flexbox also provides a way to control the order of items, even if they appear differently in the HTML. 
-      Flexbox is incredibly useful for building responsive designs because it allows the layout to adapt to screen size changes.`
+    name: 'CSS Colors',
+    content: (
+      <>
+        <h3>CSS Colors</h3>
+        <p>You can define colors using:</p>
+        <ul>
+          <li>Color names: <code>red</code>, <code>blue</code></li>
+          <li>Hex codes: <code>#ff0000</code></li>
+          <li>RGB/RGBA: <code>rgb(255, 0, 0)</code></li>
+          <li>HSL/HSLA: <code>hsl(0, 100%, 50%)</code></li>
+        </ul>
+      </>
+    )
   },
   {
     id: 6,
-    name: 'CSS Grid',
-    content: 
-      `CSS Grid is a two-dimensional layout system that enables complex grid-based designs. Unlike Flexbox, which works 
-      on a single axis, Grid lets you control both rows and columns simultaneously. To define a grid container, 
-      you use \`display: grid;\`. You can then specify the number of rows and columns with \`grid-template-rows\` and 
-      \`grid-template-columns\`. For example: 
-      \`.container { display: grid; grid-template-columns: 1fr 1fr 1fr; }\` creates a three-column grid. 
-      The \`fr\` unit represents a fraction of the available space, and you can adjust it to fit your layout needs. 
-      Grid also provides powerful features like \`grid-gap\` for spacing between rows and columns, 
-      and the ability to place items explicitly within the grid using \`grid-column\` and \`grid-row\` properties. 
-      CSS Grid is perfect for creating responsive designs, as it allows for intricate layouts without extra markup. 
-      You can also use CSS Grid with media queries to create different grid structures for different screen sizes.`
+    name: 'CSS Backgrounds',
+    content: (
+      <>
+        <h3>CSS Backgrounds</h3>
+        <p>Background properties let you control background color, images, position, and repeat behavior.</p>
+        <code>
+          body &#123;<br />
+          &nbsp;&nbsp;background-color: #f0f0f0;<br />
+          &nbsp;&nbsp;background-image: url('bg.jpg');<br />
+          &nbsp;&nbsp;background-repeat: no-repeat;<br />
+          &nbsp;&nbsp;background-size: cover;<br />
+          &#125;
+        </code>
+      </>
+    )
   },
   {
     id: 7,
-    name: 'CSS Positioning',
-    content: 
-      `CSS positioning controls where elements are placed on a webpage. The position property has several values: 
-      \`static\`, \`relative\`, \`absolute\`, and \`fixed\`. 
-      - \`static\` is the default value, where elements are positioned according to the normal document flow. 
-      - \`relative\` allows you to position an element relative to its normal position by using \`top\`, \`right\`, \`bottom\`, and \`left\`. 
-      - \`absolute\` removes the element from the document flow and positions it relative to its nearest positioned ancestor. 
-      - \`fixed\` keeps an element fixed in place even when the page is scrolled. 
-      Example:
-      \`.fixed-header { position: fixed; top: 0; width: 100%; }\` creates a header that stays at the top of the page. 
-      The \`sticky\` value allows an element to "stick" in place when it reaches a certain position on the screen. 
-      Positioning is essential for building interactive elements like sticky menus, modals, and dropdowns.`
+    name: 'CSS Borders',
+    content: (
+      <>
+        <h3>CSS Borders</h3>
+        <p>Use borders to outline elements. You can set border width, color, and style.</p>
+        <code>
+          div &#123;<br />
+          &nbsp;&nbsp;border: 2px solid black;<br />
+          &#125;
+        </code>
+      </>
+    )
   },
   {
     id: 8,
-    name: 'CSS Transitions & Animations',
-    content: 
-      `CSS transitions allow for smooth changes in element properties over time. They are triggered when an element’s state changes, 
-      such as hovering over a button. A basic transition might look like this:
-      \`.button { transition: background-color 0.3s ease; }\`. This changes the button’s background color smoothly when hovered. 
-      CSS animations are more powerful, allowing you to define multiple steps (keyframes) for a complete animation cycle. 
-      For example:
-      \`@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }\` defines a fade-in animation. 
-      Then, you can apply it to an element with \`animation: fadeIn 2s;\`. Animations can be used for effects like loading spinners, 
-      pop-up elements, or scrolling animations. CSS transitions and animations are useful for adding interactivity and visual appeal to a webpage.`
-  }
-  ,
+    name: 'CSS Margins and Paddings',
+    content: (
+      <>
+        <h3>Margins & Paddings</h3>
+        <ul>
+          <li><strong>Margin</strong>: Space outside an element</li>
+          <li><strong>Padding</strong>: Space inside an element</li>
+        </ul>
+        <code>
+          .box &#123;<br />
+          &nbsp;&nbsp;margin: 20px;<br />
+          &nbsp;&nbsp;padding: 10px;<br />
+          &#125;
+        </code>
+      </>
+    )
+  },
   {
     id: 9,
     name: 'CSS Variables',
-    content: 
-      `CSS Variables, also known as custom properties, are a powerful way to store reusable values in CSS. They are defined...`
+    content: (
+      <>
+        <h3>CSS Variables</h3>
+        <p>CSS Variables are custom properties you can reuse throughout your stylesheet.</p>
+        <code>
+          :root &#123;<br />
+          &nbsp;&nbsp;--main-color: #3498db;<br />
+          &#125;<br /><br />
+          h1 &#123;<br />
+          &nbsp;&nbsp;color: var(--main-color);<br />
+          &#125;
+        </code>
+      </>
+    )
   },
   {
     id: 10,
     name: 'CSS Media Queries',
-    content: 
-      `Media queries enable developers to create responsive designs by applying CSS rules based on device characteristics...`
+    content: (
+      <>
+        <h3>CSS Media Queries</h3>
+        <p>Media queries are used to apply styles based on screen size or device characteristics.</p>
+        <code>
+          @media (max-width: 600px) &#123;<br />
+          &nbsp;&nbsp;body &#123; font-size: 14px; &#125;<br />
+          &#125;
+        </code>
+      </>
+    )
   },
   {
     id: 11,
-    name: 'CSS Pseudo-classes',
-    content: 
-      `Pseudo-classes allow developers to style elements based on their state or position in the document. For instance...`
+    name: 'CSS Flexbox',
+    content: (
+      <>
+        <h3>CSS Flexbox</h3>
+        <p>Flexbox is a layout module that provides an easy way to align and distribute space among items in a container.</p>
+        <code>
+          .container &#123;<br />
+          &nbsp;&nbsp;display: flex;<br />
+          &nbsp;&nbsp;justify-content: space-between;<br />
+          &nbsp;&nbsp;align-items: center;<br />
+          &#125;
+        </code>
+      </>
+    )
   },
   {
     id: 12,
-    name: 'CSS Pseudo-elements',
-    content: 
-      `Pseudo-elements enable you to style specific parts of an element. Common pseudo-elements include \`::before\` and \`::after\`...`
+    name: 'CSS Grid',
+    content: (
+      <>
+        <h3>CSS Grid</h3>
+        <p>Grid is a 2D layout system for building complex responsive designs with rows and columns.</p>
+        <code>
+          .grid &#123;<br />
+          &nbsp;&nbsp;display: grid;<br />
+          &nbsp;&nbsp;grid-template-columns: repeat(3, 1fr);<br />
+          &nbsp;&nbsp;gap: 10px;<br />
+          &#125;
+        </code>
+      </>
+    )
   },
   {
     id: 13,
-    name: 'CSS Frameworks',
-    content: 
-      `CSS frameworks like Bootstrap, Tailwind, and Bulma offer pre-designed styles and components that simplify web development...`
+    name: 'CSS Positioning',
+    content: (
+      <>
+        <h3>CSS Positioning</h3>
+        <p>CSS allows positioning elements using:</p>
+        <ul>
+          <li><code>static</code> (default)</li>
+          <li><code>relative</code></li>
+          <li><code>absolute</code></li>
+          <li><code>fixed</code></li>
+          <li><code>sticky</code></li>
+        </ul>
+        <code>
+          .box &#123; position: absolute; top: 10px; left: 20px; &#125;
+        </code>
+      </>
+    )
   },
   {
     id: 14,
-    name: 'CSS Accessibility',
-    content: 
-      `CSS plays a critical role in web accessibility by ensuring designs are inclusive. Techniques include providing high-contrast...`
+    name: 'CSS Animations',
+    content: (
+      <>
+        <h3>CSS Animations</h3>
+        <p>Create animations using keyframes and animation properties.</p>
+        <code>
+          @keyframes fadeIn &#123;<br />
+          &nbsp;&nbsp;from &#123; opacity: 0; &#125;<br />
+          &nbsp;&nbsp;to &#123; opacity: 1; &#125;<br />
+          &#125;<br /><br />
+          .fade &#123;<br />
+          &nbsp;&nbsp;animation: fadeIn 2s ease-in;<br />
+          &#125;
+        </code>
+      </>
+    )
   },
   {
     id: 15,
-    name: 'CSS Best Practices',
-    content: 
-      `Adopting CSS best practices helps maintain clean, scalable, and efficient stylesheets. Use a consistent naming convention...`
+    name: 'CSS Transitions',
+    content: (
+      <>
+        <h3>CSS Transitions</h3>
+        <p>Transitions allow smooth changes from one state to another.</p>
+        <code>
+          button &#123;<br />
+          &nbsp;&nbsp;background: red;<br />
+          &nbsp;&nbsp;transition: background 0.3s ease;<br />
+          &#125;<br />
+          button:hover &#123;<br />
+          &nbsp;&nbsp;background: green;<br />
+          &#125;
+        </code>
+      </>
+    )
+  },
+  {
+    id: 16,
+    name: 'CSS Units',
+    content: (
+      <>
+        <h3>CSS Units</h3>
+        <p>CSS supports both absolute and relative units:</p>
+        <ul>
+          <li><strong>Absolute</strong>: px, cm, mm, in</li>
+          <li><strong>Relative</strong>: %, em, rem, vw, vh</li>
+        </ul>
+        <code>
+          h1 &#123; font-size: 2em; &#125;<br />
+          .container &#123; width: 80vw; &#125;
+        </code>
+      </>
+    )
+  },
+  {
+    id: 17,
+    name: 'CSS Specificity',
+    content: (
+      <>
+        <h3>CSS Specificity</h3>
+        <p>Specificity determines which rule takes precedence when multiple rules match an element.</p>
+        <p>Hierarchy:</p>
+        <ol>
+          <li>Inline styles</li>
+          <li>ID selectors</li>
+          <li>Classes, attributes, pseudo-classes</li>
+          <li>Elements and pseudo-elements</li>
+        </ol>
+        <code>
+          #title &#123; color: red; &#125; <br />
+          .title &#123; color: blue; &#125;
+        </code>
+      </>
+    )
+  },
+  {
+    id: 18,
+    name: 'CSS Functions',
+    content: (
+      <>
+        <h3>CSS Functions</h3>
+        <ul>
+          <li><code>calc()</code> — Perform calculations</li>
+          <li><code>var()</code> — Use CSS variables</li>
+          <li><code>clamp()</code> — Responsive min/max sizing</li>
+        </ul>
+        <code>
+          width: calc(100% - 100px);<br />
+          font-size: clamp(1rem, 2vw, 3rem);
+        </code>
+      </>
+    )
   }
 ];

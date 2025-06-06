@@ -1,6 +1,10 @@
 import React from 'react';
 import './Reviews.css';
 import image1 from '../Reviews/Reviews-assets/john.jpeg'
+import image2 from '../Reviews/Reviews-assets/aria.jpeg'
+import image3 from '../Reviews/Reviews-assets/adrian.jpeg'
+import image4 from '../Reviews/Reviews-assets/merry.jpg'
+import image5 from '../Reviews/Reviews-assets/zoe.jpg'
 import NavBar from '../../components/NavBar/NavBar'
 import Carousel from '../../components/Carousel/Carousel';
 import Footer from '../../components/Footer/Footer';
@@ -14,39 +18,36 @@ const Reviews = ({ isLoggedIn }) => {
       image: image1
     },
     {
-      name: 'Jane Smith',
-      profession: 'Backend Developer',
+      name: 'Aria Hayes',
+      profession: 'Full Stack Developer',
       city: 'London',
-      comment: 'The backend tutorials were very comprehensive, and the quizzes helped solidify my knowledge.',
-      image: image1
+      comment: 'The full stack course was perfectly structured. I loved the mix of theory and hands-on practice.',
+      image: image2
     },
-    ,
     {
-      name: 'Jane Smith',
+      name: 'Adrian Carter',
       profession: 'Backend Developer',
-      city: 'London',
-      comment: 'The backend tutorials were very comprehensive, and the quizzes helped solidify my knowledge.',
-      image: image1
+      city: 'Toronto',
+      comment: 'Excellent backend tutorials. The Node.js section gave me a solid foundation for my current job.',
+      image: image3
     },
-    ,
     {
-      name: 'Jane Smith',
-      profession: 'Backend Developer',
-      city: 'London',
-      comment: 'The backend tutorials were very comprehensive, and the quizzes helped solidify my knowledge.',
-      image: image1
+      name: 'Marry Morgan',
+      profession: 'Database Developer',
+      city: 'Amsterdam',
+      comment: 'The SQL and database design sections were top-notch. I now feel confident managing complex data systems.',
+      image: image4
     },
-    ,
     {
-      name: 'Jane Smith',
-      profession: 'Backend Developer',
-      city: 'London',
-      comment: 'The backend tutorials were very comprehensive, and the quizzes helped solidify my knowledge.',
-      image: image1
+      name: 'Zoe Harris',
+      profession: 'Software Engineer',
+      city: 'Sydney',
+      comment: 'This platform is a great resource. The quizzes helped me retain what I learned through coding challenges.',
+      image: image5
     },
     // Add more reviews here
   ];
-
+  
   return (
     <div className="reviews-container">
       <NavBar isLoggedIn={isLoggedIn} />

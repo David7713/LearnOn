@@ -42,3 +42,53 @@
   font-style: italic;
   font-size: 22px; /* Larger comment text */
 }
+
+
+/* Media Query for Tablets */
+@media (max-width: 1024px) {
+  .reviews-container {
+    padding: 20px;
+  }
+
+  .review-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .review-card img {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .reviews-container {
+    padding: 15px;
+  }
+
+  .review-card {
+    flex-direction: column;
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .review-card img {
+    width: 100px;
+    height: 100px;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .review-card h4 {
+    font-size: 20px;
+  }
+
+  .review-card p {
+    font-size: 16px;
+  }
+
+  .review-card .comment {
+    font-size: 18px;
+  }
+}
